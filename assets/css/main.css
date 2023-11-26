@@ -1,39 +1,45 @@
-.top{
-    height: 40px;
-    border-bottom: 1px solid #e2e2e2ed;
-    margin-bottom: 20px;
-}
-
-.Communicate{
-    max-width: var(--width-max);
-    margin: auto;
-    height: var(--height-max);
-    display: flex;
-    justify-content: space-between;
-    
-}
-.Communicate-hotline ,
-.Communicate-user{
+#top {
+    background-color: transparent;
+    border-bottom: 1px solid #e2e2e2;
     padding: 10px 0;
-}
+    margin: 0 0 20px 0;
+    min-height: 40px;
+    position: relative;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+ }
 
-.Communicate-hotline a,
-.Communicate-user a{
+ .list-inline-item{
+    list-style: none;
+
+ }
+ .list-inline-item  {
+    font-size: 14px;
+ }
+ .list-inline-item a{
     text-decoration: none;
     color: #4f4f4f;
-}
+ }
 
-.Communicate-user a{
-    padding-right: 13px;
+ .container {
+    display: flex;
+    justify-content: space-between;
+ }
+ .list-inline{
+    display: flex;
+ }
+.float-end a {
+    font-size: 1.1rem;
 }
-
-.login-user{
+ .float-end>ul li {
+    padding-right: 20px;
+   
+ }
+ .list-item-login{
     position: relative;
-    
-}
-
-.log-sign{
-    
+ }
+ .menu-login{
     position: absolute;
     min-width: 280px;
     border: 1px solid  #e2e2e2ed;
@@ -41,10 +47,9 @@
     background-color: white;
     display: none;
     z-index: 1;
-    
-   
-}
-.log-sign::before{
+ }
+
+ .menu-login::before{
     content: "";
     display: flex;
     position: absolute;
@@ -54,26 +59,28 @@
     top: -12px;
 }
 
-.log-user:hover .log-sign{
+.list-item-login:hover .menu-login{
     display: block;
 }
 
-.log-sign-list{
+.menu-login {
     list-style: none;
     padding: 13px 0;
 }
 
-.log-sign-list li {
+.menu-login li {
     padding: 5px 16px;
     font-weight: 500;
     font-size: 15px;
 }
-.log-sign-list li:hover{
+
+.menu-login li:hover{
     background-color: #e9ecef;
 }
-.log-sign-list li:active{
+.menu-login li:active{
     background-color: #229ac8;
 }
+
 /* header logo */
 
 .header-logo{
@@ -359,6 +366,10 @@
 .flower-items{
     max-width: 277px;
     margin-bottom: 15px;
+    /* border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc; */
+    border-radius: 5px;
 }
 
 .text-item{
@@ -370,7 +381,8 @@
 }
 
 .img{
-    width: 100%;
+    width: 103%;
+    border-radius: 5px;
 
     
 }
@@ -401,6 +413,7 @@
     text-align: center;
 }
 .sub-item a{
+    cursor: pointer;
     text-decoration: none;
     color: #fff;
     display: inline-block;
