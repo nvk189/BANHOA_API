@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/detail.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/home.js"></script>
+    <script src="/Javascrip/detail.js"></script>
+
 </head>
-<body>
+<body >
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -37,12 +42,12 @@
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
                             <ul class="menu-login">
                                 <li><a href="" class="dropdown-item">Đăng ký</a></li>
-                                <li><a href="/html/login.html" class="dropdown-item">Đăng nhập</a></li>
+                                <li><a href="" class="dropdown-item">Đăng nhập</a></li>
                              </ul>
                         </div>
                     </li>
-                    <li class="list-inline-item"><a href="https://www.flowercorner.vn?route=checkout/cart" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
-                    <li class="list-inline-item"><a href="https://www.flowercorner.vn?route=checkout/checkout" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
+                    <li class="list-inline-item"><a href="" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
+                    <li class="list-inline-item"><a href="" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
                     </ul>
             </div>
         </div>
@@ -191,69 +196,158 @@
             <p class="header-notice__text">ĐẶT HOA ONLINE - GIAO MIỄN PHÍ TP HCM &amp; HÀ NỘI - GỌI NGAY 1900 633 045 HOẶC 0865 160 360</p>
         </div>
 
-        <div class=" grid wide "   style="display: flex; height:  600px;">
-            <div class="l-9 " style="display: flex;" >
-                <div class="info-sign" style="width: 100%;">
-                    <h1 >Đăng ký tài khoản</h1>
-                    <span class="content-sign">Nếu bạn đã có tài khoản với chúng tôi, vui lòng đăng nhập tại <a class="link-login" href="./login.html">trang đăng nhập </a>.</span>
-                    <form action=""  method="post">
-                        
-                        <h3 class="text-infor__user" >Thông tin cá nhân của bạn</h3>
-                        <div class="infor-top " >
-                            <div class=" infor-item infor-1">
-                              
-                                <span class=" text-name">  <span class="icon-note">*</span> Họ tên</span>
-                                <input class="input-text" type="text" placeholder="Họ tên">
-                            </div>
-                            <div class=" infor-item infor-1">
-                                
-                                <span class=" text-name">  <span class="icon-note">*</span> E - mail</span>
-                                <input class="input-text" type="email" placeholder="E-mail">
-                            </div>
-                            <div class=" infor-item infor-1">
-                              
-                                <span class=" text-name">  <span class="icon-note">*</span> Điện thoại</span>
-                                <input class="input-text" type="text" placeholder="Điện thoại">
-                            </div>
+
+    
+    <!-- chi tiết sản phẩm -->
+        <div class="detail">
+            <div   class=" grid wide" style="display: flex;"  >
+                <div  class="list-sp l-6 " >
+                    <div class="grid detail-item" >
+                         <img  class="detail-img" src="https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp" alt="ảnh sản phẩm">
+                    </div>
+                </div>
+                <div class= "l-6 ">
+                    <div class="detail-price grid">
+                        <div class="detail-price-content">
+
+                            <h3 class="detail-name"> Baby nhỏ xinh</h3>
+                            <!-- <h4 class="detail-money-sale">360,000 VND</h4> -->
+                            <h4 class="detail-money">360,000 VND</h4>
+
                         </div>
 
-                        <h3 class="text-infor__user" >Mật khẩu của bạn</h3>
-                        <div class="infor-top " >
-                           
-                            <div class=" infor-item infor-1">
-                                
-                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu</span>
-                                <input class="input-text" type="password" placeholder="Mật khẩu">
+                        <div class="detail-sale">
+                            <div class="detali-sale-item">
+                                <div class="price-sale">
+
+                                    <h3 class="price-sale-name">Khuyến mãi:</h3>
+                                    <span class="price-sale-item">Giảm 50K</span>
+                                    <span class="price-sale-item">Giảm 25K</span>
+                                    <span class="price-sale-item">Giảm 10%</span>
+                                </div>
+                                <div class="list-sale" >
+                                    <ul  class=" sale-class">
+                                        <li class=" item-sale">
+                                            <span class="item-sale-price">
+                                                FC50
+                                            </span>
+                                            <div class="new-sale">
+                                                <span class="price-sale-item">Giảm 50K</span>
+                             
+                                                <p>Giảm 50K cho đơn hàng từ 600K (Chỉ áp dụng cho khách hàng mới. Không áp dụng đồng thời cho các sản phẩm đã giảm giá).</p>
+                                            </div>
+                                        </li>
+                                        <li class=" item-sale">
+                                            <span class="item-sale-price">
+                                                FC25
+                                            </span>
+                                            <div class="new-sale">
+                                                <span class="price-sale-item">Giảm 25K</span>
+                                                <p>Giảm 25K cho tất cả đơn hàng (Chỉ áp dụng cho khách hàng mới. Không áp dụng đồng thời cho các sản phẩm đã giảm giá).</p>
+                                            </div>
+                                        </li>
+                                        <li class=" item-sale">
+                                            <span class="item-sale-price-1 item-sale-price">
+                                                T6VUIVE
+                                            </span>
+                                            <div class="new-sale">
+                                                
+                                                <span class="price-sale-item">Giảm 10%</span>
+                                                <p>Giảm 10% cho tất cả đơn hàng khi đặt hoa vào thứ 6 hàng tuần (Không áp dụng đồng thời cho các sản phẩm đã giảm giá).</p>
+                                            </div>
+                                        </li>
+                                      
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
+                        <div class="hotline" style="display: flex;">
+                            <h3 class="price-sale-name">Gọi ngay:</h3>
+                            <span class="phone-number">1900 633 045</span>
+                        </div>
 
-                        <div class="check">
-                            <div class="check-item">
-                                <span class=" content-sign-check">
-                                     <input   class="check-icon" type="checkbox"> 
-                                    Tôi đã đọc và đồng ý với <a class="link-login" href="">Điều khoản & Điều kiện </a>
-                                </span>
-                                <span class="btn-continue"><a href="">Tiếp tục</a></span>
+                        <div class="hotline" style="display: flex;">
+                            <h3 class="price-sale-name">Chat ngay :</h3>
+                            <i style="color: blue;" class="fa-brands fa-facebook-messenger icon-detail" ></i>
+                            <i style="color: blue;" class="fa-brands fa-facebook-messenger icon-detail" ></i>
+                            <i style="color: blue;" class="fa-brands fa-facebook-messenger icon-detail" ></i>
+                            <i style="color: blue;" class="fa-brands fa-facebook-messenger icon-detail" ></i>
+                        </div>
+
+                        <div class="hotline" style="display: flex;">
+                            <h3 class="price-sale-name">Vận chuyển:</h3>
+                            <span class="text-ship">Miễn phí giao hoa khu vực nội thành TP.HCM & Hà Nội</span>
+                        </div>
+
+                        <div class="address">
+                            <div class="l-6">
+                                <input  class=" address-item" type="text" placeholder="Nhập thành phố">
+                            </div>
+                            <div class="l-6">
+                                <input class=" address-item" type="text" placeholder="Nhập địa chỉ">
+                            </div>
+
+
+                        </div>
+                        <i class="tag-ship"> Phí giao hàng miễn phí khu vực Hà Nội và TP.Hồ Chí Minh</i>
+                        <span class="text-Qty"> Qty</span>
+                        <div class="btn">
+                            <input type="text" placeholder="Số lượng" class="number-item">
+                            <button class="order order-color1">Đặt hàng </button>
+                            <button class="order order-color2">Thêm vào giỏ hàng  </button>
+
+                        </div>
+
+                        <div class="gift">
+                            <div class="gift-item l-6">
+                                <img class="gift-icon" src="https://www.flowercorner.vn/image/icon/60mins.png" alt="">
+                                <span class="gift-text">Giao hoa NHANH trong 60 phút</span>
+                            </div>
+                            <div class="gift-item l-6">
+                                <img class="gift-icon"  src="https://www.flowercorner.vn/image/icon/freegifts.png" alt="">
+                                <span class="gift-text">Tặng miễn phí thiệp hoặc banner</span>
                             </div>
                         </div>
-                    </form>
+                    
 
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-product ">
+                <div class="content-product-list grid wide" >
+                    <div class="content-product-name">
+                        <span class="content-name">
+                            Mô tả sản phẩm
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="l-3 login-3">
-                <div class="list-login">
 
-                    <ul class="login-3-list">
-                        
-                        <li><a href="./login.html"> Đăng nhập</a></li>
-                        <li><a href="">Đăng ký</a></li>
-                        <li><a href="">Đã quên mật khẩu</a></li>
-                        <li><a href="">Tài khoản của tôi</a></li>
-                        <li><a href="">Lịch sử đơn hàng</a></li>
-                    </ul>
+            <div class="product-list ">
+                <div class="grid wide">
+
+                    <h3 class="detail-name"> Sản phẩm liên quan</h3>
+                    
+                    <div class="flower grid wide ">
+                        <div class="flower-list ">
+                            
+                              
+                                    <div class="flower-item  row ">
+                                        
+                                    </div>
+                                
+                            
+                             
+                        </div>
+            
+                    </div>
                 </div>
             </div>
         </div>
+   
        
     </main>
        
@@ -439,8 +533,7 @@
         </a>
         
     </div>
-    <script src="/Javascrip/home.js">
-
-    </script>
+   
+   
 </body>
 </html>

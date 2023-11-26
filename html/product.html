@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký</title>
+    <title>Sản phẩm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/product.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/api.js"></script>
+
 </head>
-<body>
+<body ng-app="AppBanHoa"  ng-controller="HomeCtrl">
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -37,12 +41,12 @@
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
                             <ul class="menu-login">
                                 <li><a href="" class="dropdown-item">Đăng ký</a></li>
-                                <li><a href="/html/login.html" class="dropdown-item">Đăng nhập</a></li>
+                                <li><a href="" class="dropdown-item">Đăng nhập</a></li>
                              </ul>
                         </div>
                     </li>
-                    <li class="list-inline-item"><a href="https://www.flowercorner.vn?route=checkout/cart" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
-                    <li class="list-inline-item"><a href="https://www.flowercorner.vn?route=checkout/checkout" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
+                    <li class="list-inline-item"><a href="" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
+                    <li class="list-inline-item"><a href="./bill.html" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
                     </ul>
             </div>
         </div>
@@ -191,70 +195,53 @@
             <p class="header-notice__text">ĐẶT HOA ONLINE - GIAO MIỄN PHÍ TP HCM &amp; HÀ NỘI - GỌI NGAY 1900 633 045 HOẶC 0865 160 360</p>
         </div>
 
-        <div class=" grid wide "   style="display: flex; height:  600px;">
-            <div class="l-9 " style="display: flex;" >
-                <div class="info-sign" style="width: 100%;">
-                    <h1 >Đăng ký tài khoản</h1>
-                    <span class="content-sign">Nếu bạn đã có tài khoản với chúng tôi, vui lòng đăng nhập tại <a class="link-login" href="./login.html">trang đăng nhập </a>.</span>
-                    <form action=""  method="post">
+
+    <!-- danh sách  sản phẩm -->
+        <div class="list-product">
+            <div class="grid wide product-list-item" >
+                <h1>
+
+                    <span class="text-product">Sản phẩm hoa theo tiêu đề</span>
+                </h1>
+                <div class="menu-list-product">
+                    <div class=" icon-menu-list">
+                        <i class="fa-solid fa-table-cells"></i>
+                    </div>
+                    <div class="page-list">
                         
-                        <h3 class="text-infor__user" >Thông tin cá nhân của bạn</h3>
-                        <div class="infor-top " >
-                            <div class=" infor-item infor-1">
-                              
-                                <span class=" text-name">  <span class="icon-note">*</span> Họ tên</span>
-                                <input class="input-text" type="text" placeholder="Họ tên">
-                            </div>
-                            <div class=" infor-item infor-1">
-                                
-                                <span class=" text-name">  <span class="icon-note">*</span> E - mail</span>
-                                <input class="input-text" type="email" placeholder="E-mail">
-                            </div>
-                            <div class=" infor-item infor-1">
-                              
-                                <span class=" text-name">  <span class="icon-note">*</span> Điện thoại</span>
-                                <input class="input-text" type="text" placeholder="Điện thoại">
-                            </div>
+                        <div class="number-text">
+                            <label for="">Sắp xếp theo</label>
+                            <select id="input-sort" class="form-select" onchange="location = this.value;">
+                                <option value="">Mặc định</option>
+                                <option value="">Tên (A - Z)</option>
+                                <option value="">Tên (Z - A)</option>
+                                <option value="">Giá (Thấp&gt; Cao)</option>
+                                <option value="">Giá (Cao&gt; Thấp)</option>
+                                <option value="">Mô hình (A - Z)</option>
+                                <option value="" selected="">Mô hình (Z - A)</option>
+                                </select>
                         </div>
 
-                        <h3 class="text-infor__user" >Mật khẩu của bạn</h3>
-                        <div class="infor-top " >
-                           
-                            <div class=" infor-item infor-1">
+                        <div class="number-page">
+                            <label for="">Số lượng</label>
+                            <select id="input-sort" class="form-select" onchange="location = this.value;">
                                 
-                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu</span>
-                                <input class="input-text" type="password" placeholder="Mật khẩu">
-                            </div>
+                                <option value="">12</option>
+                                <option value="">24</option>
+                                <option value="" selected="">48</option>
+                                </select>
                         </div>
-
-                        <div class="check">
-                            <div class="check-item">
-                                <span class=" content-sign-check">
-                                     <input   class="check-icon" type="checkbox"> 
-                                    Tôi đã đọc và đồng ý với <a class="link-login" href="">Điều khoản & Điều kiện </a>
-                                </span>
-                                <span class="btn-continue"><a href="">Tiếp tục</a></span>
-                            </div>
-                        </div>
-                    </form>
+                        
+                    </div>
 
                 </div>
-            </div>
-            <div class="l-3 login-3">
-                <div class="list-login">
 
-                    <ul class="login-3-list">
-                        
-                        <li><a href="./login.html"> Đăng nhập</a></li>
-                        <li><a href="">Đăng ký</a></li>
-                        <li><a href="">Đã quên mật khẩu</a></li>
-                        <li><a href="">Tài khoản của tôi</a></li>
-                        <li><a href="">Lịch sử đơn hàng</a></li>
-                    </ul>
+                <div class="flower-item  row ">
+                            
                 </div>
             </div>
         </div>
-       
+    
     </main>
        
     
