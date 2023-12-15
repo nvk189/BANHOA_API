@@ -1,4 +1,5 @@
 /*  nên responsive mỗi phần khi làm xong  */
+/*  media query cho màn hình hiện tại */
 .grid {
     width: 100%;
     display: block;
@@ -140,7 +141,7 @@
     margin-left: 91.66667%;
 }
 
-/* >= Tablet */
+/* Media query cho tablet và màn hình lớn hơn */
 @media (min-width: 740px) {
     .row {
         margin-left: -8px;
@@ -277,7 +278,7 @@
     }
 }
 
-/* PC medium resolution > */
+/* Media query cho PC trung bình và lớn hơn */
 @media (min-width: 1113px) {
     .row {
         margin-left: -12px;
@@ -430,14 +431,9 @@
     }
 }
 
-/* Tablet - PC low resolution */
-@media (min-width: 740px) and (max-width: 1023px) {
-    .wide {
-        width: 644px;
-    }
-}
 
-/* > PC low resolution */
+
+/* Media query cho PC lớn hơn */
 @media (min-width: 1024px) and (max-width: 1239px) {
     .wide {
         width: 984px;

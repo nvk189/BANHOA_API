@@ -1,6 +1,4 @@
 
-
-
 var header = document.querySelector(".header-list");
 
 // Xử lý sự kiện cuộn trang
@@ -26,6 +24,7 @@ function renderProducts(productlist , product){
     productItem.classList.add("list-brithday__item");
     const productImage =document.createElement("a");
     productImage.textContent =product.name;
+    productImage.href= product.link;
     productItem.appendChild(productImage);
     productlist.appendChild(productItem);
 });
@@ -34,40 +33,48 @@ function renderProducts(productlist , product){
 const product = [
     {
         id:1,
-        name: "Hoa sinh nhật sang trọng",
+        name: "Hoa sinh nhật sang trọng ",
+        link :"/html/product.html",
         
     },
 
     {
         id:2,
         name: "Hoa sinh nhật giá rẻ",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "Hoa tặng sinh nhật người yêu  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "Hoa tặng sinh nhật mẹ",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "Hoa tặng sinh nhật bạn",
+        link :"/html/product.html",
     },
     {
         id:6,
         name: " lẵng Hoa tặng sinh nhật ",
+        link :"/html/product.html",
     },
     {
         id:7,
         name: "Hoa hồng tặng sinh nhật",
+        link :"/html/product.html",
     },
     {
         id:8,
         name: "giỏ hoa tặng sinh nhật",
+        link :"/html/product.html",
     },
     
 ]
@@ -80,26 +87,31 @@ const product_2 = [
     {
         id:1,
         name: "hoa khai trương để bàn",
+        link :"/html/product.html",
     },
 
     {
         id:2,
         name: "kệ hoa khai trương",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "kệ hoa khai trương hiện đại  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "hoa khai trương giá rẻ",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "lẵng hoa 2 tầng mừng khai trương",
+        link :"/html/product.html",
     },
     
 ]
@@ -111,62 +123,76 @@ const product_3 = [
     {
         id:1,
         name: "Hoa chúc mừng ",
+        link :"/html/product.html",
     },
 
     {
         id:2,
         name: "Hoa cưới cầm tay",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "Hoa tang lễ - hoa chia buồn  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "Hoa tình yêu",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "Hoa valentin",
+        link :"/html/product.html",
     },
     {
         id:6,
         name: " hoa kỉ niệm ngày cưới ",
+        link :"/html/product.html",
     },
     {
         id:7,
         name: "ngày của mẹ",
+        link :"/html/product.html",
     },
     {
         id:8,
         name: "hoa chúc mừng 8-3",
+        link :"/html/product.html",
     },
     {
         id:9,
         name: "hoa chúc mừng 20-10",
+        link :"/html/product.html",
     },
     {
         id:10,
         name: "ngày nhà giáo VN",
+        link :"/html/product.html",
     },
     {
         id:11,
         name: "giáng sinh",
+        link :"/html/product.html",
     },
     {
         id:12,
         name: "tết âm lịch",
+        link :"/html/product.html",
     },
     {
         id:13,
         name: "hoa tốt nghiệp",
+        link :"/html/product.html",
     },
     {
         id:14,
         name: "hoa định kỳ",
+        link :"/html/product.html",
     },
     
 ]
@@ -178,30 +204,36 @@ const product_4 = [
     {
         id:1,
         name: "bó hoa ",
+        link :"/html/product.html",
     },
 
     {
         id:2,
         name: "lẵng hoa",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "giỏ hoa  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "kệ hoa",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "hộp hoa",
+        link :"/html/product.html",
     },
     {
         id:6,
         name: " bình hoa",
+        link :"/html/product.html",
     },
     
 ]
@@ -214,66 +246,81 @@ const product_5 = [
     {
         id:1,
         name: "Hoa hồng ",
+        link :"/html/product.html",
     },
 
     {
         id:2,
         name: "Hoa baby",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "Hoa hướng dương  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "Hoa lan hồ điệp",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "Hoa tulip",
+        link :"/html/product.html",
     },
     {
         id:6,
         name: " hoa cúc tana ",
+        link :"/html/product.html",
     },
     {
         id:7,
         name: "hoa thạch thảo",
+        link :"/html/product.html",
     },
     {
         id:8,
         name: "hoa mẫu đơn",
+        link :"/html/product.html",
     },
     {
         id:9,
         name: "cúc mẫu đơn",
+        link :"/html/product.html",
     },
     {
         id:10,
         name: "hoa cẩm tú cầu",
+        link :"/html/product.html",
     },
     {
         id:11,
         name: "hoa ly",
+        link :"/html/product.html",
     },
     {
         id:12,
         name: "hoa sen",
+        link :"/html/product.html",
     },
     {
         id:13,
         name: "hoa đống tiền",
+        link :"/html/product.html",
     },
     {
         id:14,
         name: "hoa cẩm chướng",
+        link :"/html/product.html",
     },
     {
         id:14,
         name: "hoa cúc họa mi",
+        link :"/html/product.html",
     },
     
 ]
@@ -286,30 +333,36 @@ const product_6 = [
     {
         id:1,
         name: "gấu bông  ",
+        link :"/html/product.html",
     },
 
     {
         id:2,
         name: "Socola",
+        link :"/html/product.html",
     },
 
     {
         id:3,
         name: "bánh kem  ",
+        link :"/html/product.html",
     },
 
     {
         id:4,
         name: "giỏ trái cây",
+        link :"/html/product.html",
     },
 
     {
         id:5,
         name: "giỏ quà tặng",
+        link :"/html/product.html",
     },
     {
         id:6,
         name: " quà lưu niệm",
+        link :"/html/product.html",
         
     },
     
@@ -350,7 +403,7 @@ leftButton.addEventListener('click', function () {
 });
 //    flower-list
 
-// Tạo một hàm để thêm một sản phẩm vào danh sách sản phẩm
+// // Tạo một hàm để thêm một sản phẩm vào danh sách sản phẩm
 function addProductToContainer(containerId, product_list) {
     // Tìm đối tượng chứa sản phẩm bằng cách sử dụng containerId
     const container = document.querySelector(`.${containerId}`);
@@ -389,40 +442,40 @@ function addProductToContainer(containerId, product_list) {
     {
        
         name: "Mặt trời của anh ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
     {
         
         name: "Mặt trời của anh ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-scented-love.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
 
     {
         name: "Mặt trời của anh ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/khoe-sac.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
-
     {
-        
         name: "Mặt trời của anh ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/khoe-sac.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
+
+    
   ]
   // duyệt qua vòng lặp để thêm sản phẩm
  for (const product of product_sale) {
@@ -434,113 +487,116 @@ function addProductToContainer(containerId, product_list) {
     {
        
         name: "Little Tana",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
     {
         
         name: "Baby nhỏ xinh",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-cuc-tana-litle-tana.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
 
     {
         name: "Simple",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/fairy-tale.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
 
     {
         name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
-    {
-        name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-        price: "500,000VND",
-        salePrice: "300,000VND",
-        link: "#"
+    // {
+    //     name: "Khoe Sắc",
+    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+    //     price: "500,000VND",
+    //     salePrice: "300,000VND",
+    //     link: "/html/detail.html"
 
-    },
-    {
-        name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-        price: "500,000VND",
-        salePrice: "300,000VND",
-        link: "#"
+    // },
+    // {
+    //     name: "Khoe Sắc",
+    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+    //     price: "500,000VND",
+    //     salePrice: "300,000VND",
+    //     link: "/html/detail.html"
 
-    },
-    {
-        name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-        price: "500,000VND",
-        salePrice: "300,000VND",
-        link: "#"
+    // },
+    // {
+    //     name: "Khoe Sắc",
+    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+    //     price: "500,000VND",
+    //     salePrice: "300,000VND",
+    //     link: "/html/detail.html"
 
-    },
-    {
-        name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-        price: "500,000VND",
-        salePrice: "300,000VND",
-        link: "#"
+    // },
+    // {
+    //     name: "Khoe Sắc",
+    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+    //     price: "500,000VND",
+    //     salePrice: "300,000VND",
+    //     link: "/html/detail.html"
 
-    },
+    // },
     
   ]
   for (const product of product_sale_1) {
     addProductToContainer("flower-item-1", product);
   }
 
+
+
+
   // sản phẩm mới
   const product_sale_2 = [
     {
        
         name: "Little Tana",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-sen-hong.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
     {
         
         name: "Baby nhỏ xinh",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-thach-thao-tim-miracle.jpg.webp" ,
         price: "",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
 
     {
         name: "Simple",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/net-quy-phai-hoa-cam-chuong.jpg.webp" ,
         price: "",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
 
     {
         name: "Khoe Sắc",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-cam-chuong-hong-my-bae.jpg.webp" ,
         price: "",
         salePrice: "300,000VND",
-        link: "#"
+        link: "/html/detail.html"
 
     },
   ]
@@ -592,11 +648,22 @@ for (const src of imageSources) {
 //         }, 2000);
 //     }
   
-//   toggleSlider(); 
+  toggleSlider(); 
 
 
-    
+
+
   
+
+
+
+
+
+
+
+
+
+
 
 
 

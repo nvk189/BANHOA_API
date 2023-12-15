@@ -12,8 +12,7 @@
 
 </head>
 <body  >
-    <!-- header -->
-    <!-- header-top -->
+
     <nav id="top">
         <div class="container grid wide  ">
             <div class="nav float-start">
@@ -34,15 +33,15 @@
                 <ul class="list-inline">
                     <li class="list-inline-item list-item-login">
                          <div class="dropdown">
-                            <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
+                            <a href="./account.html" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
                             <ul class="menu-login">
                                 <li><a href="/html/Sign.html" class="dropdown-item">Đăng ký</a></li>
                                 <li><a href="/html/login.html" class="dropdown-item">Đăng nhập</a></li>
                              </ul>
                         </div>
                     </li>
-                    <li class="list-inline-item"><a href="" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
-                    <li class="list-inline-item"><a href="./bill.html" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
+                    <li class="list-inline-item"><a href="/html/Cart.html" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
+                    <li class="list-inline-item"><a href="/html/bill.html" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
                     </ul>
             </div>
         </div>
@@ -80,12 +79,12 @@
 
                         <div class="list-three__left"  >
                           <input  class="text-search" type="text" placeholder="Tìm kiếm">
-                          <a href="" style="display: inline-block;">
+                          <a href="./search.html" style="display: inline-block;">
                             <i class="fa-solid fa-magnifying-glass icon-search"></i>
                         </a>
                           
                         </div>
-                        <div class="shopping-cart">
+                        <div  class="shopping-cart" >
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -93,16 +92,41 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                    0
+                                   3
                                 </span>
                             </div>
                             <div class="list-cart" >
 
-                                <ul class="" >
-                                    <li class="name-cart">
-                                        Giỏ hàng của bạn đang trống!
+                                <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
+                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                        <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
+
+                                            <div class="" style="width: 20%;">
+                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
+                                            </div>
+                                            <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
+    
+                                                <p class="item-name">Hoa </p>
+                                            </div>
+                                            <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
+    
+                                                <p class="item-quantity" style="color: #000;">3</p>x
+                                                <p  class="item-price" style="color: #000;">500000VND</p>
+                                            </div>
+                                        </a>
+                                            <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
+                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                            </div>
                                     </li>
-                                 </ul>
+                                    <li class="Total-money">
+                                        <div class="">
+                                            <div class=""  style="display: flex; float: right; margin-right: 20px; margin-top: 20px;">
+                                                <a href="./Cart.html" style="text-decoration: none; font-size: 16px; color: #e91e63;"> giỏ hàng</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                             
                             </div>
                         </div>
                         
@@ -245,8 +269,9 @@
             <div class="flower-list ">
                 <h2 class="text-item ">đang giảm giá</h2>
                   
-                        <div class="flower-item  row ">
+                        <div class="flower-item  row " >
                             
+                           
                         </div>
                     
                 
@@ -293,6 +318,10 @@
 
                 <div class="flower-item flower-item-1 row">
                     
+                
+                    <div class="number_sales" >
+                       15%
+                    </div>
                 </div>
                  
             </div>
@@ -618,12 +647,7 @@
 
                 </a>
             </div>
-            <div  class="sibar">
-                <a href="">
-                    
-                    <span style="color: #fff;">Zalo</span>
-                </a>
-            </div>
+           
             <div  class="sibar">
                 <a href="">
                     <i style="color: #fff;" class="fa-brands fa-facebook-messenger"></i>

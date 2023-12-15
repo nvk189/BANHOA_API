@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
     
 </head>
-<body  ng-app="AppBanHoa"  ng-controller="Detail">
+<body  >
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -44,7 +44,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item"><a href="" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
-                    <li class="list-inline-item"><a href="" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
+                    <li class="list-inline-item"><a href="./bill.html" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
                     </ul>
             </div>
         </div>
@@ -87,7 +87,7 @@
                         </a>
                           
                         </div>
-                        <div class="shopping-cart">
+                        <div  class="shopping-cart" >
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -95,30 +95,30 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                    {{sum}}
+                                   3
                                 </span>
                             </div>
                             <div class="list-cart" >
 
-                                <ul class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
-                                    <li class="name-cart" ng-repeat="x in list track by x.maSanPham" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
-                                        <a href="/html/detail.html?id={{x.maSanPham}}" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
+                                <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
+                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                        <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
 
                                             <div class="" style="width: 20%;">
-                                                <img ng-src="{{x.anhDaiDien}}" alt="" class="item-image">
+                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
     
-                                                <p class="item-name">{{x.tenSanPham}}</p>
+                                                <p class="item-name">Hoa </p>
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
     
-                                                <p class="item-quantity" style="color: #000;">{{x.soLuong}}</p>x
-                                                <p  class="item-price" style="color: #000;">{{x.gia}}</p>
+                                                <p class="item-quantity" style="color: #000;">3</p>x
+                                                <p  class="item-price" style="color: #000;">500000VND</p>
                                             </div>
                                         </a>
                                             <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
-                                                <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
                                             </div>
                                     </li>
                                     <li class="Total-money">
@@ -129,6 +129,11 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <!-- <ul id="CartZezo" class="CartZezo">
+                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                        <p>Giỏ hàng trống</p>
+                                    </li>
+                                </ul> -->
                             </div>
                         </div>
                         
@@ -241,29 +246,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="x in list" ng-init="x.isSelected = false" >
+                                <tr   >
                                     <td>
-                                        <input type="checkbox" ng-model="x.isSelected" ng-change="toggleSelection(x)" name="" id="">
+                                        <input type="checkbox"   name="" id="">
                                     </td>
                                     <td>
-                                        <img src="{{x.anhDaiDien}}" alt="" style="height: 80px ; width: 80px;">
+                                        <img src="https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp" alt="" style="height: 80px ; width: 80px;">
                                     </td>
                                    
-                                    <td style="color: #e91e63;">{{x.tenSanPham}}</td>
-                                    <td>{{x.maSanPham}}</td>
+                                    <td style="color: #e91e63;">Hoa lan vangf</td>
+                                    <td>1</td>
                                     <td>
-                                        <input ng-model="newQuantity" style="font-size: 16px; width: 50px; text-align: center;" type="number" value="{{x.soLuong}}">
-                                        <i  ng-click="updateQuantity(x, newQuantity)" class="fa-solid fa-rotate" style="padding: 5px; background-color: green;color: #fff; border-radius: 2px;"></i>
-                                        <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="background-color: #e91e63; border-radius: 2px; font-size: 16px; padding: 5px; cursor: pointer; color: #fff;"></i>
+                                        <input style="font-size: 16px; width: 50px; text-align: center;" type="number" value="1">
+                                        <i   class="fa-solid fa-rotate" style="padding: 5px; background-color: green;color: #fff; border-radius: 2px;"></i>
+                                        <i  class="fa-solid fa-trash-can" style="background-color: #e91e63; border-radius: 2px; font-size: 16px; padding: 5px; cursor: pointer; color: #fff;"></i>
                                     </td>
-                                    <td>{{x.gia}}</td>
-                                    <td>{{calculateTotal(x)}}</td>
+                                    <td>500000</td>
+                                    <td>500000</td>
                                 </tr>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td  colspan="6"><p style="float: right;" >Tổng cộng :</p></td>
-                                    <td>{{calculateSelectedTotal()}}</td>
+                                    <td>500000</td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -456,12 +461,7 @@
 
                 </a>
             </div>
-            <div  class="sibar">
-                <a href="">
-                   
-                    <span style="color: #fff;">Zalo</span>
-                </a>
-            </div>
+           
             <div  class="sibar">
                 <a href="">
                     <i style="color: #fff;" class="fa-brands fa-facebook-messenger"></i>

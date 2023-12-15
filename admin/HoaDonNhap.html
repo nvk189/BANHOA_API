@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/logoCPT.png">
     <link rel="stylesheet" href="../css/style_mainQT.css">
     <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="/Javascrip/click.js"></script>
-    <title>Quản lý cửa hàng bán máy tính NCC</title>
 </head>
 
 <body>
@@ -172,7 +170,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="listImport"></tbody>
-                                    <!-- <tbody>
+                                    <tbody>
                                         <tr>
                                             <td style="text-align: center;padding-top: 10px;"><input type="checkbox"
                                                     value="" id=""></td>
@@ -187,7 +185,7 @@
                                                 <i class="fas fa-trash-alt" title="Xóa"></i>
                                             </td>
                                         </tr>
-                                    </tbody> -->
+                                    </tbody>
                                 </table>
                             </div>
                             <div class="col-12 col-s-12 padding-box">
@@ -220,24 +218,24 @@
 
             LoadUser();
 
-            // var sanpham = '<tr>\
-            //             <td>\<input type="text" class="" placeholder="Mã sản phẩm...">\</td>\
-            //             <td>\
-            //                 <input type="text" class="" placeholder="Tên sản phẩm...">\
-            //             </td>\
-            //             <td>\
-            //                 <input type="number" class="" placeholder="Số lượng...">\
-            //             </td>\
-            //             <td>\
-            //                 <input type="number" class="" placeholder="Đơn giá...">\
-            //             </td>\
-            //             <td>\
-            //                 <button class="" onclick="XoaSanPham(this)"><i class="fas fa-trash"></i></button>\
-            //             </td>\
-            //         </tr>';
-            // $("#AddSanPham").click(function (e) {
-            //     $("#DSSanPham").append(sanpham);
-            // });
+            var sanpham = '<tr>\
+                        <td>\<input type="text" class="" placeholder="Mã sản phẩm...">\</td>\
+                        <td>\
+                            <input type="text" class="" placeholder="Tên sản phẩm...">\
+                        </td>\
+                        <td>\
+                            <input type="number" class="" placeholder="Số lượng...">\
+                        </td>\
+                        <td>\
+                            <input type="number" class="" placeholder="Đơn giá...">\
+                        </td>\
+                        <td>\
+                            <button class="" onclick="XoaSanPham(this)"><i class="fas fa-trash"></i></button>\
+                        </td>\
+                    </tr>';
+            $("#AddSanPham").click(function (e) {
+                $("#DSSanPham").append(sanpham);
+            });
 
             var list = JSON.parse(localStorage.getItem('Import')) || [];
 
