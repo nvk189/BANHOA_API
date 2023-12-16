@@ -1,6 +1,9 @@
 .detail{
     margin-top: 20px;
 }
+.detail_list{
+    display: flex;
+}
 .detail-img{
     width: 560px;
     height: 560px;

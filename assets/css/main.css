@@ -335,7 +335,12 @@
     height: 330px;
     
 }
-
+.list-responsi{
+    display: none;
+}
+.list_tool{
+    display: none;
+}
 .button-slider{
        width: 100%;
         position: absolute;
@@ -458,6 +463,7 @@
     height: 150px;
     border-radius: 5px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
 .flower-custom-icon{

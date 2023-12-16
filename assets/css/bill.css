@@ -2,9 +2,26 @@
     font-size: 16px;
    
 }
-
+.bill{
+    display: flex;
+}
+.bill_product{
+    padding: 0 30px;
+}
+.btn_add{
+    background-color: #e91e63;
+     color: #fff; 
+     text-align: center;
+      border-radius:5px ; 
+      cursor: pointer; 
+      margin: 10px 10px;
+}
 .icon-note{
     color: red;
+}
+.btn_add-bill{
+    margin-top: 20px;
+    display: flex;
 }
 #cusname, #cusphone ,#cusdate, #cusaddress{
     width: 93%;

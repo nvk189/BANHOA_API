@@ -1,7 +1,52 @@
 
 /* Quy tắc CSS cho điện thoại di động (kích thước màn hình <= 767px) */
-@media (max-width: 767px) {
-    
+@media (max-width: 736px) {
+    body{
+        width: 100%;
+        /* overflow-x: hidden; */
+    }
+  
+    .list_tool{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .search_respon{
+        padding: 0;
+        margin-top: 19px;
+    }
+   .list-responsi{
+        text-align: center;
+        padding-top: 30px;
+        display: block;
+        font-size: 20px;
+        padding-bottom: 10px;
+        cursor: pointer;
+   }
+   
+   .list-item__check{
+        display: none;
+        
+   }
+   .list-item__check li{
+        display: block;
+        text-align: center;
+   }
+   .list-brithday{
+       left: 40px;
+   }
+   .header-notice__text{
+    margin-top: 0;
+   }
+    .list-inline .list-inline-item{
+        padding-left: 5px;
+    }
+    .float-end .list-inline-item{
+        padding: none;
+    }
+    .customer{
+        display: none;
+    }
     .log-user-name{
         display: none;
        }
@@ -18,72 +63,357 @@
         flex-wrap: wrap;
 
     }
+    .menu-login{
+        min-width: none;
+        left: -200px;
+
+       
+    }
+    .d-none{
+        display: none;
+    }
+    .header-logo__list{
+        display: block;
+    }
     .logo-list__one{
-       display: none;
+       width: 100%;
+       text-align: center;
 
     }
+    
+    .logo-list__two {
+        max-width: 100%;
+        padding-left: none;
+        margin: 10px 50px 10px 10px;
+        text-align: center;
+    }
     .logo{
-        
+        max-height: 53px;
         max-width: 260px;
+        padding-bottom: 10px;
         margin: auto;
         
     }
+   
     .logo-list__two{
         width: var(--width-max);
     }
-    .link-logo__two{
-        padding-left: 18%;
-    }
-   
     .logo-list__three{
         display: none;
     }
-
-    
-
-   
-    .header-list{
-        display: none;
+    .flower-items{
+        max-width: 180px;
+        padding: 0  10px 0 10px;
+        /* max-height: 100px; */
     }
-    .header-notice{
-        display: none;
-    }
-   
-
+   .img-flower .img{
+        max-height: 230px;
+   }
+   .three-sp-icon{
+        width: 400px;
+   }
+   .three-sp__list{
+        display: block;
+        width: 100%;
+   }
+   .three-sp__item{
+      text-align: center;
+   }
     .home-slider{
-        margin-left: 20px;
-        width: 100% ;
-        height: 100px;
+        max-width: 100% ;
+        max-height: 130px;
     }
-    /* .flower-items{
-        max-width: 183px;} */
-
+   
     .text-sp{
         display: none;
     }
-    .footer-top{
-        display: inline;
+    iframe{
+        max-width:100%;
     }
-    
+    .shop-pa , .shop-pa-2{
+        display: block;
+    }
+    .footer-top{
+        display: block;
+        /* display: none; */
+       
+    }
+    .fixed-bottom{
+        max-height: 50px;
+    }
+    .list-fixed-bottom{
+        font-size: 13px;
+        text-align: center;
+    } 
+    .text-content-pa  {
+        line-height: 1.2;
+    }
+    .flower-list-cus{
+        display: none;
+    }
+    .text-item-custom{
+        display: none;
+    }
+    .Hotline-footer{
+        display: inline-block;
+    }
+
+    /*  chi tiết sản phẩm */
+    .detail_list{
+        display: block;
+    }
+    .detail-item{
+        text-align: center;
+    }
+    .sale-class{
+        
+        min-width: 0px;
+        
+         
+     }
+     .item-sale{
+        max-width: 280px;
+     }
+     .item-sale-price{
+        max-height: 0px;
+     }
+    .price-sale-item{
+        font-size: 12px;
+        width: 80px;
+        height: 20px;
+    }
+ 
+    .detail-img{
+        max-width: 300px;
+        max-height: 450px;
+        
+        
+    }
+    .flower-list{
+        display: inline-block;
+       
+    }
+    .product_lq{
+        
+        
+        margin: 0 auto;
+    }
+
+    /*  thanh toán */
+    .bill{
+        display: block;
+    }
+    .custom_bill{
+        max-width: 90%;
+        padding: 0 10px;
+    }
+    .bill_product{
+        max-width: 90%;
+        padding: 0 10px;
+    }
+    .btn_add-bill{
+        display: block;
+    }
+    .btn_add ,.btn_remove{
+        max-width: 450px;
+        text-align: center;
+    }
+    /*  list sản phẩm */
+    .product_list_item{
+        margin-top: 10px;
+        padding: 0 10px;
+        max-width: 170px;
+    }
+    .box-right{
+        text-align: center;
+        margin-top: 15px;
+    }
+    .icon-menu-list i , .number-text label {
+        display: none;
+    }
+    .page-list{
+        justify-content: space-around;
+    }
+    .menu-list-product{
+        padding: 5px 10px;
+        margin: 10px 0;
+    }
+  
+  
 }
 
 /* Quy tắc CSS cho máy tính bảng (kích thước màn hình từ 768px đến 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
+    
+    body{
+        width: 99%;
+        /* overflow-x: hidden; */
+    }
+    .list_tool{
+        /* margin-top: 10px; */
+        display: flex;
+        max-height: 50px;
+        justify-content: space-around;
+    }
+    .search_respon{
+        padding: 0;
+        margin-top: 10px;
+    }
+    .search_respon_list {
+        width: 500px;
+        /* margin-left: 180px; */
+    }
+    .text-search{
+        width: 450px;
+    }
+   .list-responsi{
+        margin-top: 15px;
+        text-align: center;
+        padding-top: 30px;
+        display: block;
+        font-size: 20px;
+        padding-bottom: 10px;
+        cursor: pointer;
+   }
+    .list-responsi{
+        text-align: left;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+        cursor: pointer;
+       }
+    .list-item__check{
+        display: none;
+    }
+    .list-item__check li{
+        display: block;
+        text-align: left;
+   }
+   .list-brithday{
+        top: 0;
+        left: 180px;
+    }
+    .custom-icon{
+        margin: 0 10px;
+    }
+    
     .Communicate-hotline{
         padding-left: 10px;
     }
     .logo-list__three{
         display: none;
     }
+    .home-slider{
+        padding-right: 10px;
+        width: 775px;
+        height: 200px;
+    }
     .list-slider{
         width: 100% ;
         height: 200px;
     }
+
+   .flower-item {
+    display: flex;
+    justify-content: space-around;
+   }
+   .flower-items{
+        max-width: 170px ;
+        
+   }
+   .img-flower .img{
+    max-height: 180px;
+   }
+   .shop-pa , .shop-pa-2{
+        display:  flex;
+        justify-content: space-around;
+   }
+   .content-pa{
+        width: 50%;
+   }
+   iframe{
+        width: 100%;
+   }
+   .text-content-pa  {
+        line-height: 1.2;
+   }
+
+
+   /*  chi tiết sản phẩm */
+   .detail-img{
+        width: 300px;
+        height: 417px;
+    }
+    .order-color2{
+        width: 56px;
+        /* padding: 0; */
+    }
+    .btn{
+        font-size: 12px;
+    }
+    .price-sale-item{
+        font-size: 12px;
+        width: 58px;
+        height: 20px;
+    }
+    
+    .sale-class{
+        
+       min-width: 0px;
+       
+        
+    }
+    .product_lq{
+        max-width: 150px;
+    }
+
+    /*  thanh toán */
+    
+    .custom_bill{
+        max-width: 46%;
+        padding: 0 10px;
+    }
+    .bill_product{
+        max-width: 50%;
+        padding: 0 13px;
+    }
+    .btn_add-bill{
+        display: block;
+    }
+    .btn_add ,.btn_remove{
+        max-width: 450px;
+        text-align: center;
+    }
+
+    /*  giỏ hàng */
+    .carttb{
+        padding: 0 5px;
+    }
+
+    /* list sản phẩm  */
+    .product_list_item{
+        margin-top: 10px;
+        /* padding: 0 10px; */
+        padding: 0;
+        max-width: 150px;
+    }
+    .box-right{
+        text-align: center;
+        margin-top: 30px;
+    }
+     .number-text label {
+        display: none;
+    }
+    .page-list{
+        justify-content: space-around;
+    }
+    .menu-list-product{
+        text-align: center;
+        margin: 5px 10px;
+        
+    }
+
 }
 
-/* Quy tắc CSS cho máy tính để bàn (kích thước màn hình >= 1024px) */
-@media (min-width: 1024px) {
-    .log-sign{
-        top:35px
-    }
-}
+

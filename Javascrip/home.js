@@ -410,7 +410,7 @@ function addProductToContainer(containerId, product_list) {
   
     // Tạo một phần tử sản phẩm mới
     const productItem = document.createElement("div");
-    productItem.classList.add("flower-items","col", "l-3", "m-4", "c-6");
+    productItem.classList.add("flower-items","col", "l-3", "m-12", "c-6");
   
     // product_sale.map((product) => {
 
@@ -426,7 +426,8 @@ function addProductToContainer(containerId, product_list) {
         <span class="price">${product_list.price}</span>
       </div>
       <div class="sub-item">
-        <a href="${product_list.link}">
+       
+        <a href="${product_list.link}" class="order-btn" data-product='${JSON.stringify(product_list)}'>
           Đặt hàng
         </a>
       </div>
@@ -441,16 +442,17 @@ function addProductToContainer(containerId, product_list) {
   const product_sale = [
     {
        
-        name: "Mặt trời của anh ",
+        name: "Hoa test",
         image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "/html/detail.html"
+        // link: "/html/detail.html"
+        link:"#"
 
     },
     {
         
-        name: "Mặt trời của anh ",
+        name: "Hoa hồng  ",
         image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-scented-love.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
@@ -459,11 +461,12 @@ function addProductToContainer(containerId, product_list) {
     },
 
     {
-        name: "Mặt trời của anh ",
+        name: "Mặt trời hoa hồng  ",
         image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/khoe-sac.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
         link: "/html/detail.html"
+       
 
     },
     {
@@ -482,6 +485,22 @@ function addProductToContainer(containerId, product_list) {
     addProductToContainer("flower-item", product);
   }
 
+
+  //  đưa thông tin sản phẩm vào local
+  document.querySelector(".flower-item").addEventListener("click", function (event) {
+    const orderBtn = event.target.closest('.order-btn');
+
+    if (orderBtn) {
+        // Lấy thông tin sản phẩm từ thuộc tính data-product
+        const productInfo = JSON.parse(orderBtn.getAttribute('data-product'));
+
+        // Lưu thông tin sản phẩm vào local storage
+        localStorage.setItem('selectedProduct', JSON.stringify(productInfo));
+        console.log(localStorage.getItem('selectedProduct'));
+
+        alert('Sản phẩm đã được chọn!');
+    }
+});
 // sản phẩm đặt nhiều nhất
   const product_sale_1 = [
     {
@@ -490,7 +509,8 @@ function addProductToContainer(containerId, product_list) {
         image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        link: "/html/detail.html"
+        // link: "/html/detail.html"
+        link:"#"
 
     },
     {
@@ -520,38 +540,7 @@ function addProductToContainer(containerId, product_list) {
         link: "/html/detail.html"
 
     },
-    // {
-    //     name: "Khoe Sắc",
-    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-    //     price: "500,000VND",
-    //     salePrice: "300,000VND",
-    //     link: "/html/detail.html"
-
-    // },
-    // {
-    //     name: "Khoe Sắc",
-    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-    //     price: "500,000VND",
-    //     salePrice: "300,000VND",
-    //     link: "/html/detail.html"
-
-    // },
-    // {
-    //     name: "Khoe Sắc",
-    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-    //     price: "500,000VND",
-    //     salePrice: "300,000VND",
-    //     link: "/html/detail.html"
-
-    // },
-    // {
-    //     name: "Khoe Sắc",
-    //     image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/New%20Sep/mat-troi-cua-anh-271x271.jpg.webp" ,
-    //     price: "500,000VND",
-    //     salePrice: "300,000VND",
-    //     link: "/html/detail.html"
-
-    // },
+  
     
   ]
   for (const product of product_sale_1) {
@@ -618,7 +607,8 @@ const imageSources = [
   "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/common/partner/5-130x130.png.webp",
   "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/common/partner/4-130x130.png.webp",
   "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/common/partner/3-130x130.png.webp",
-  
+  "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/common/partner/7-130x130.png.webp",
+  "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/common/partner/13-130x130.png.webp"
 ];
 
 // Tạo các phần tử và gắn vào phần tử cha
@@ -634,21 +624,59 @@ for (const src of imageSources) {
   flowerCustomIcon.appendChild(customIcon);
 }
 
+// sự kiện khách hàng tiêu biểu nhất 
 
-// slider custom 
-// function toggleSlider() {
-//     const sliderItems = document.querySelectorAll('.custom-icon');
-//     let currentIndex = 0;
-    
-        
-//         setInterval(() => {
-//           sliderItems[currentIndex].style.display = 'none';
-//           currentIndex = (currentIndex + 1) % sliderItems.length;
-//           sliderItems[currentIndex].style.display = 'block';
-//         }, 2000);
-//     }
-  
-  toggleSlider(); 
+const customIcons = document.querySelectorAll('.flower-custom-icon .custom-icon');
+const iconWidth = customIcons[0].offsetWidth;
+let currentPosition = 0;
+const batchSize = 5; // Số lượng ảnh hiển thị mỗi lần
+
+// Ẩn tất cả các ảnh
+customIcons.forEach(icon => {
+  icon.style.display = 'none';
+});
+
+// Hiển thị một lô ảnh (4 ảnh) và di chuyển qua từng lô sau mỗi khoảng thời gian
+function showBatch() {
+  for (let i = 0; i < batchSize; i++) {
+    if (currentPosition >= customIcons.length) {
+      currentPosition = 0; // Trở về đầu nếu đã hiển thị hết ảnh
+    }
+    customIcons[currentPosition].style.display = 'block';
+    currentPosition++;
+  }
+}
+
+// Chạy hàm showBatch để hiển thị ảnh ban đầu
+showBatch();
+
+// Thiết lập interval để thực hiện chuyển động liên tục
+const interval = setInterval(() => {
+  // Ẩn tất cả ảnh trước khi hiển thị lô ảnh tiếp theo
+  customIcons.forEach(icon => {
+    icon.style.display = 'none';
+  });
+
+  showBatch(); // Hiển thị lô ảnh tiếp theo
+}, 2000);
+
+
+///// responsive sản phẩm
+const showButton = document.getElementById('list-responsi');
+const hiddenDiv = document.getElementById('list-item__check');
+
+// Thêm sự kiện onclick
+showButton.addEventListener('click', function() {
+  // Kiểm tra trạng thái hiển thị của thẻ
+  if (hiddenDiv.style.display === 'none' || hiddenDiv.style.display === '') {
+    // Nếu đang ẩn, hiển thị thẻ
+    hiddenDiv.style.display = 'block';
+  } else {
+    // Nếu đang hiển thị, ẩn đi
+    hiddenDiv.style.display = 'none';
+  }
+});
+
 
 
 
