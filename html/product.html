@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/product.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    <script src="/Javascrip/api.js"></script>
 
 </head>
 <body >
@@ -43,7 +42,7 @@
                              </ul>
                         </div>
                     </li>
-                    <li class="list-inline-item"><a href="" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
+                    <li class="list-inline-item"><a href="./Cart.html" title="Giỏ hàng"><i class="fa-solid fa-bag-shopping"></i> <span class="d-none d-md-inline">Giỏ hàng</span></a></li>
                     <li class="list-inline-item"><a href="./bill.html" title="Thanh toán"><i class="fa-solid fa-share"></i> <span class="d-none d-md-inline">Thanh toán</span></a></li>
                     </ul>
             </div>
@@ -129,11 +128,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <!-- <ul id="CartZezo" class="CartZezo">
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
-                                        <p>Giỏ hàng trống</p>
-                                    </li>
-                                </ul> -->
+                               
                             </div>
                         </div>
                         
@@ -429,11 +424,11 @@
                     </div>
                     <div class="box-right">
                        
-                        <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87; " ng-click="prevPage()"><i class="fas fa-angle-left"></i></button>
-                        <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">1 </button>
-                        <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">2 </button>
-                        <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">3 </button>
-                        <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87;" ng-click="nextPage()"><i class="fas fa-angle-right"></i></button>
+                        <button id="btn_click" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87; " ng-click="prevPage()"><i class="fas fa-angle-left"></i></button>
+                        <button id="btn_click" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">1 </button>
+                        <button id="btn_click" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">2 </button>
+                        <button id="btn_click" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  ng-repeat="page in pages" ng-click="setPage(page)">3 </button>
+                        <button id="btn_click" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87;" ng-click="nextPage()"><i class="fas fa-angle-right"></i></button>
                     </div>
         
                 <!-- </div> -->

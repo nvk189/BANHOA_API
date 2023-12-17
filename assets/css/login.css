@@ -16,7 +16,9 @@
     font-weight: bold;
     
 }
-
+.sign_login{
+    display: flex;
+}
 .btn-continue a{
     padding: 12px;
     border-radius: 5px;

@@ -600,6 +600,7 @@ footer{
 
 /* footer-bottom */
 .fixed-bottom{
+    max-height: 50px ;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -609,7 +610,7 @@ footer{
 }
 
 .list-fixed-bottom{
-    padding: 8px 0 4px 0;
+    padding: 3px 0 4px 0;
     min-height: 48px;
     display: flex;
     justify-content: center;
@@ -637,14 +638,139 @@ footer{
   }
 .button-fixed{
     position: fixed;
-    bottom: 80px;
-    left: 30px;
+    bottom: 60px;
+    left: 20px;
     padding:18px 20px;
     border-radius: 50%;
     background-color: #e91e63;
 
 }
+.chat_online{
+    content: "";
+    width: 280px;
+    height: 40px;
+    position: fixed;
+    bottom: 3px;
+    text-align: center;
+    right: 10px;
+    cursor: pointer;
+    background-color:#015c1e;
+    border-radius: 5px;
+}
+.chat_mess{
+  padding-top: 10px;
+  color: #fff;
+}
+.chat_mess_number{
+    display: block;
+    padding: 3px 9px;
+    color: #fff;
+    background-color: red;
+    position: fixed;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 5px;
+}
+.mess-chat{
+    border-radius: 5px;
+    width: 360px;
+    /* height: 500px; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color:#fff;
+}
+.btn_chat {
+    padding: 20px;
+    background-color: #015c1e;
+    color: #fff;
 
+}
+.header_chat{
+    padding: 10px;
+    background-color: #015c1e;
+    color: #fff;
+}
+.header_chat a {
+   
+    color: #fff;
+}
+.icon_clear{
+    font-size: 24px;
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+    bottom: 0;
+    
+}
+.header_chat{
+    font-size: 14px;
+    text-align: center;
+}
+.mess_send{
+    border-bottom: 1px solid #ccc;
+}
+.icon_shop_chat {
+    width: 10%;
+    position: relative;
+    /* background-color: red; */
+}
+.icon_chat{
+    position: absolute;
+    bottom: 5px;
+    
+}
+.tn_chat{
+    width: 90%;
+    /* background-color: yellow; */
+}
+.vien{
+    margin-top: 10px;
+    height: 1px;
+    border-radius: 2px;
+    background-color: #ccc;
+    width: 200px;
+}
+.vien_mess{
+    color: #ccc;
+    padding-left: 5px;
+}
+.tn_shop{
+    margin-top: 15px;
+}
+.tn_shop_1{
+    max-width: 220px;
+    max-height: 88px;
+    background-color: #1c9249;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.input{
+    box-shadow: 2px 0 0 0;
+}
+.input_chat_text{
+    border: none;
+    outline: none;
+    padding: 15px 12px ;
+    width: 250px;
+}
+
+.icon_tn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon_tn i{
+    
+    font-size: 16px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+/*  messs */
 .button-fixed i{
     font-size: 26px;
 }
@@ -685,6 +811,8 @@ footer{
     text-align: center; 
    
 }
+
+
 
 
 

@@ -487,20 +487,7 @@ function addProductToContainer(containerId, product_list) {
 
 
   //  đưa thông tin sản phẩm vào local
-  document.querySelector(".flower-item").addEventListener("click", function (event) {
-    const orderBtn = event.target.closest('.order-btn');
 
-    if (orderBtn) {
-        // Lấy thông tin sản phẩm từ thuộc tính data-product
-        const productInfo = JSON.parse(orderBtn.getAttribute('data-product'));
-
-        // Lưu thông tin sản phẩm vào local storage
-        localStorage.setItem('selectedProduct', JSON.stringify(productInfo));
-        console.log(localStorage.getItem('selectedProduct'));
-
-        alert('Sản phẩm đã được chọn!');
-    }
-});
 // sản phẩm đặt nhiều nhất
   const product_sale_1 = [
     {
@@ -677,6 +664,32 @@ showButton.addEventListener('click', function() {
   }
 });
 
+// sự kiện click mess online
+const chatOnline1 = document.getElementById('chat_online');
+const messOnline1 = document.getElementById('button-fixed');
+
+// Thiết lập hiển thị sau 3000ms (3 giây)
+setTimeout(function() {
+    chatOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
+     messOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
+}, 3000);
+// Lấy phần tử chat_online và mess-chat
+const chatOnline = document.getElementById('chat_online');
+const messChat = document.getElementById('mess-chat');
+
+// Lấy phần tử icon_clear
+const iconClear = document.getElementById('icon_clear');
+
+// Bắt sự kiện click vào chat_online
+chatOnline.addEventListener('click', function() {
+    messChat.style.display = 'block';
+});
+
+// Bắt sự kiện click vào icon_clear
+iconClear.addEventListener('click', function() {
+    // Ẩn mess-chat khi click vào icon_clear
+    messChat.style.display = 'none';
+});
 
 
 
