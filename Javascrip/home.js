@@ -371,36 +371,52 @@ const product_6 = [
 const productList_6 =document.querySelector(".list-brithday-6")
 renderProducts(productList_6,product_6);
 
-// slider
 
-function toggleSlider() {
-    const sliderItems = document.querySelectorAll('.slider-item');
-    let currentIndex = 0;
-    setInterval(() => {
-      sliderItems[currentIndex].style.display = 'none';
-      currentIndex = (currentIndex + 1) % sliderItems.length;
-      sliderItems[currentIndex].style.display = 'block';
-    }, 2000);
+///// responsive sản phẩm
+const showButton = document.getElementById('list-responsi');
+const hiddenDiv = document.getElementById('list-item__check');
+
+// Thêm sự kiện onclick
+showButton.addEventListener('click', function() {
+  // Kiểm tra trạng thái hiển thị của thẻ
+  if (hiddenDiv.style.display === 'none' || hiddenDiv.style.display === '') {
+    // Nếu đang ẩn, hiển thị thẻ
+    hiddenDiv.style.display = 'block';
+  } else {
+    // Nếu đang hiển thị, ẩn đi
+    hiddenDiv.style.display = 'none';
   }
-  toggleSlider(); 
-
-//    sự kiện click button
-const rightButton = document.querySelector(".button-right");
-const leftButton = document.querySelector(".button-left");
-const sliderItems = document.querySelectorAll('.slider-item');
-let currentIndex = 0;
-
-rightButton.addEventListener('click', function () {
-    sliderItems[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex + 1) % sliderItems.length;
-    sliderItems[currentIndex].style.display = 'block';
 });
 
-leftButton.addEventListener('click', function () {
-    sliderItems[currentIndex].style.display = 'none';
-    currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
-    sliderItems[currentIndex].style.display = 'block';
+// sự kiện click mess online
+const chatOnline1 = document.getElementById('chat_online');
+const messOnline1 = document.getElementById('button-fixed');
+
+// Thiết lập hiển thị sau 3000ms (3 giây)
+setTimeout(function() {
+    chatOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
+     messOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
+}, 3000);
+// Lấy phần tử chat_online và mess-chat
+const chatOnline = document.getElementById('chat_online');
+const messChat = document.getElementById('mess-chat');
+
+// Lấy phần tử icon_clear
+const iconClear = document.getElementById('icon_clear');
+
+// Bắt sự kiện click vào chat_online
+chatOnline.addEventListener('click', function() {
+    messChat.style.display = 'block';
 });
+
+// Bắt sự kiện click vào icon_clear
+iconClear.addEventListener('click', function() {
+    // Ẩn mess-chat khi click vào icon_clear
+    messChat.style.display = 'none';
+});
+
+
+
 //    flower-list
 
 // // Tạo một hàm để thêm một sản phẩm vào danh sách sản phẩm
@@ -431,13 +447,24 @@ function addProductToContainer(containerId, product_list) {
           Đặt hàng
         </a>
       </div>
+      <div class="number_sales" >
+        15%
+        </div>
     `;
     // Gán nội dung cho phần tử sản phẩm
     productItem.innerHTML = productContent;
+    const priceElement = productItem.querySelector('.price');
+    const numberSalesElement = productItem.querySelector('.number_sales');
+
+    if (priceElement && priceElement.textContent.trim() == '') {
+        numberSalesElement.style.display = 'none';
+    }
     // Thêm phần tử sản phẩm vào danh sách sản phẩm
     container.appendChild(productItem);
   }
   
+  // danh sách sản phẩm
+
   // Định nghĩa nhiều sản phẩm
   const product_sale = [
     {
@@ -446,8 +473,7 @@ function addProductToContainer(containerId, product_list) {
         image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp",
         price: "500,000VND",
         salePrice: "300,000VND",
-        // link: "/html/detail.html"
-        link:"#"
+        link: "/html/detail.html"
 
     },
     {
@@ -462,7 +488,7 @@ function addProductToContainer(containerId, product_list) {
 
     {
         name: "Mặt trời hoa hồng  ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/khoe-sac.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-thau-cam.jpg.webp" ,
         price: "500,000VND",
         salePrice: "300,000VND",
         link: "/html/detail.html"
@@ -471,8 +497,40 @@ function addProductToContainer(containerId, product_list) {
     },
     {
         name: "Mặt trời của anh ",
-        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/khoe-sac.jpg.webp" ,
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-do-red-rose.jpg.webp" ,
+        price: "",
+        salePrice: "300,000VND",
+        link: "/html/detail.html"
+
+    },
+    {
+        name: "Mặt trời của anh ",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/loi-yeu.jpg.webp" ,
         price: "500,000VND",
+        salePrice: "300,000VND",
+        link: "/html/detail.html"
+
+    },
+    {
+        name: "Mặt trời của anh ",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/anh-mat-troi.jpg.webp" ,
+        price: "500,000VND",
+        salePrice: "300,000VND",
+        link: "/html/detail.html"
+
+    },
+    {
+        name: "Mặt trời của anh ",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-thach-thao-tim-hen-uoc.jpg.webp" ,
+        price: "",
+        salePrice: "300,000VND",
+        link: "/html/detail.html"
+
+    },
+    {
+        name: "Mặt trời của anh ",
+        image: "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-huong-duong-kinh-trong.jpg.webp" ,
+        price: "",
         salePrice: "300,000VND",
         link: "/html/detail.html"
 
@@ -580,6 +638,8 @@ function addProductToContainer(containerId, product_list) {
     addProductToContainer("flower-item-2", product);
   }
 
+
+
 //    khách hàng đặt nhiều 
 
 // Chọn phần tử cha "flower-custom-icon"
@@ -646,50 +706,37 @@ const interval = setInterval(() => {
 
   showBatch(); // Hiển thị lô ảnh tiếp theo
 }, 2000);
+// slider
 
-
-///// responsive sản phẩm
-const showButton = document.getElementById('list-responsi');
-const hiddenDiv = document.getElementById('list-item__check');
-
-// Thêm sự kiện onclick
-showButton.addEventListener('click', function() {
-  // Kiểm tra trạng thái hiển thị của thẻ
-  if (hiddenDiv.style.display === 'none' || hiddenDiv.style.display === '') {
-    // Nếu đang ẩn, hiển thị thẻ
-    hiddenDiv.style.display = 'block';
-  } else {
-    // Nếu đang hiển thị, ẩn đi
-    hiddenDiv.style.display = 'none';
+function toggleSlider() {
+    const sliderItems = document.querySelectorAll('.slider-item');
+    let currentIndex = 0;
+    setInterval(() => {
+      sliderItems[currentIndex].style.display = 'none';
+      currentIndex = (currentIndex + 1) % sliderItems.length;
+      sliderItems[currentIndex].style.display = 'block';
+    }, 2000);
   }
+  toggleSlider(); 
+
+//    sự kiện click button
+const rightButton = document.querySelector(".button-right");
+const leftButton = document.querySelector(".button-left");
+const sliderItems = document.querySelectorAll('.slider-item');
+let currentIndex = 0;
+
+rightButton.addEventListener('click', function () {
+    sliderItems[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex + 1) % sliderItems.length;
+    sliderItems[currentIndex].style.display = 'block';
 });
 
-// sự kiện click mess online
-const chatOnline1 = document.getElementById('chat_online');
-const messOnline1 = document.getElementById('button-fixed');
-
-// Thiết lập hiển thị sau 3000ms (3 giây)
-setTimeout(function() {
-    chatOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
-     messOnline1.style.display = 'block'; // Hiển thị phần tử chat_online
-}, 3000);
-// Lấy phần tử chat_online và mess-chat
-const chatOnline = document.getElementById('chat_online');
-const messChat = document.getElementById('mess-chat');
-
-// Lấy phần tử icon_clear
-const iconClear = document.getElementById('icon_clear');
-
-// Bắt sự kiện click vào chat_online
-chatOnline.addEventListener('click', function() {
-    messChat.style.display = 'block';
+leftButton.addEventListener('click', function () {
+    sliderItems[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+    sliderItems[currentIndex].style.display = 'block';
 });
 
-// Bắt sự kiện click vào icon_clear
-iconClear.addEventListener('click', function() {
-    // Ẩn mess-chat khi click vào icon_clear
-    messChat.style.display = 'none';
-});
 
 
 
