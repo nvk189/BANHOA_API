@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
+    <title>Tìm kiếm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/product.css">
     <link rel="stylesheet" href="/assets/css/search.css">
+    <link rel="stylesheet" href="/assets/css/bill.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/detail.js"></script>
 </head>
-<body    >
+<body  ng-app="AppBanHoa"  >
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -87,7 +91,7 @@
                           </a>
                           
                         </div>
-                        <div  class="shopping-cart " >
+                        <div  class="shopping-cart" ng-controller="Detail">
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -95,30 +99,30 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                   3
+                                   {{sum}}
                                 </span>
                             </div>
                             <div class="list-cart" >
 
                                 <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                    <li ng-repeat="x in list track by x.maSanPham" class="name-cart"  style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
                                         <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
 
                                             <div class="" style="width: 20%;">
-                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
+                                                <img ng-src="{{x.anhsp}}" alt="" class="item-image">
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
     
-                                                <p class="item-name">Hoa </p>
+                                                <p class="item-name">{{x.tenSanPham}} </p>
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
     
-                                                <p class="item-quantity" style="color: #000;">3</p>x
-                                                <p  class="item-price" style="color: #000;">500000VND</p>
+                                                <p class="item-quantity" style="color: #000;">{{x.soLuong}}</p>x
+                                                <p  class="item-price" style="color: #000;">{{x.gia}}VND</p>
                                             </div>
                                         </a>
                                             <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
-                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                                <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
                                             </div>
                                     </li>
                                     <li class="Total-money">
@@ -129,11 +133,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <!-- <ul id="CartZezo" class="CartZezo">
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
-                                        <p>Giỏ hàng trống</p>
-                                    </li>
-                                </ul> -->
+                               
                             </div>
                         </div>
                         
@@ -300,179 +300,32 @@
             </div>
          
 
-          
-            <!-- <div class="flower-item  row  c-12 m-12"   style="display: flex; justify-content: center;">
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
+            <div  class="flower grid wide " style="margin-bottom: 36px; margin-top: 20px;">
+                <div class="flower-list ">
+    
+                    <div  class="flower-ite  row" >
+                       
+                    </div>
                      
                 </div>
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-tinh-yeu-mau-xanh.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block;  padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-yeu-kieu.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-tinh-yeu-mau-xanh.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block;  padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-yeu-kieu.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block; padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-tinh-yeu-mau-xanh.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                <div class="item_search" style="display: inline-block;  padding: 20px;">
-                    <div class="img-flower">
-                        <img class="img" style="height: 300px; " src="/assets/img/bo-hoa-hong-yeu-kieu.jpg.webp" alt=" hoa hồng">
-                     </div>
-                     <div class="text-flower">
-                       <p class="name-flower">Hoa hồng vàng</p>
-                       <div class="" style="display: flex; justify-content: center;">
-
-                           <span class="price-sale">200000VND</span>
-                           <span class="price" >500000VND</span>
-                       </div>
-                     </div>
-                     <div class="sub-item">
-                       <a href="./detail.html">
-                         Đặt hàng
-                       </a>
-                     </div>
-                </div>
-                
-                 
-            </div> -->
-            <div class="flower grid wide " style="margin-bottom: 36px;">
-                <div class="flower-list ">
-                    <!-- <h2 class="text-item ">sản phẩm mới</h2> -->
     
-                    <div class="flower-item flower-item-2 row">
+            </div>
+            <div class="box-right" style="display: flex;justify-content: center;">
+               
+                <button class="btn_next-1" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87; " ><i class="fas fa-angle-left"></i></button>
+                <div id="button_number" class="button_number">
+
+                    <button id="btn_click" style="background-color: #ed6b87; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: white;"   >1 </button>
+                   
+                </div>
+                <button class="btn_next" style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87;"><i class="fas fa-angle-right"></i></button>
+            </div>
+            
+            <!-- <div class="flower grid wide " style="margin-bottom: 36px;">
+                <div class="flower-list ">
+                    <h2 class="text-item ">sản phẩm mới</h2> -->
+    
+                    <!-- <div class="flower-item flower-item-2 row">
                         
                     </div>
                      
@@ -486,7 +339,7 @@
                 <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;" >2 </button>
                 <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 10px; color: #ed6b87;"  >3 </button>
                 <button style="background-color: #fff; margin: 0 3px; border-color: #ccc; padding: 5px 8px; color: #ed6b87;" ><i class="fas fa-angle-right"></i></button>
-            </div>
+            </div> -->
   
         </div>
     </main>
@@ -717,11 +570,8 @@
             </div>
         </div>
     </div>
+    <script src="/Javascrip/product.js"></script>
     <script src="/Javascrip/home.js"></script>
-    <!-- <script src="/Javascrip/angular.min.js"></script>
-    <script src="/Javascrip/global.js"></script>
-    <script src="/Javascrip/search.js"></script> -->
-    <!-- <script src="/Javascrip/detail.js"></script> -->
-
+   
 </body>
 </html>

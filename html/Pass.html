@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
-    <title>Giỏ hàng</title>
+    <title>Mật khẩu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/product.css">
-    <link rel="stylesheet" href="/assets/css/Cart.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/bill.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <script src="/Javascrip/angular.min.js"></script>
     <script src="/Javascrip/global.js"></script>
     <script src="/Javascrip/detail.js"></script>
-    
 </head>
-<body ng-app="AppBanHoa"  >
+<body ng-app="AppBanHoa">
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -43,7 +42,7 @@
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
                             <ul id="menu-login" class="menu-login">
                                 <li><a href="" class="dropdown-item">Đăng ký</a></li>
-                                <li><a href="" class="dropdown-item">Đăng nhập</a></li>
+                                <li><a href="/html/login.html" class="dropdown-item">Đăng nhập</a></li>
                              </ul>
                         </div>
                     </li>
@@ -91,7 +90,7 @@
                         </a>
                           
                         </div>
-                        <div  class="shopping-cart" ng-controller="Detail" >
+                        <div  class="shopping-cart" ng-controller="Detail">
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -143,186 +142,158 @@
         </div>
     </div>
 
-    <div class="header-list">
-        <div class="list-item">
-            <div class="item-check">
-                <div class="list_tool" >
-
-                    <div id="list-responsi" class="list-responsi">
-                        <i style="color: red;" class="fa-solid fa-bars"></i>
-                    </div>
-                    <div class="search_respon">
-                        <div class="search_respon_list">
-
-                            <input  class="text-search" type="text" placeholder="Tìm kiếm">
-                                  <a href="./search.html" style="display: inline-block;">
-                                    <i class="fa-solid fa-magnifying-glass icon-search"></i>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-                <ul id="list-item__check" class="list-item__check">
-                    <li class="item-brithday  ">
-                        <a href="">
-                            HOA SINH NHẬT
-                        </a>
-
-                        <ul class="list-brithday-1 list-brithday">
-                            
-                        </ul>
-                    </li>
-
-                    <li class="item-brithday">
-                        <a href="">
-                            HOA KHAI TRƯƠNG
-                        </a>
- 
-                        <ul class="  list-brithday list-brithday-2 ">
-                         
-                        </ul>
-                     </li>
-
-                     <li class="item-brithday">
-                        <a href="">
-                        CHỦ ĐỀ
-                        </a>
- 
-                        <ul class="list-brithday list-brithday-3">
-                         
-                        </ul>
-                     </li>
-
-                     <li class="item-brithday">
-                        <a href="">
-                        THIẾT KẾ
-                        </a>
- 
-                         <ul class="list-brithday list-brithday-4">
-                        
-                       
-                        </ul>
-                     </li>
-                    
-                     <li class="item-brithday">
-                        <a href="">
-                        HOA TƯƠI
-                        </a>
- 
-                        <ul class="list-brithday list-brithday-5">
-                        
-                        </ul>
-                     </li>
-
-                     <li class="item-brithday">
-                        <a href="">
-                        QUÀ TẶNG
-                        </a>
- 
-                         <ul class="list-brithday list-brithday-6">
-                        </ul>
-                     </li>
-
-                     <li class="item-brithday"><a href="">
-                        HOA TƯƠI GIẢM 30%
-                        </a>
-                     </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="header-notice">
-        <p class="header-notice__text">ĐẶT HOA ONLINE - GIAO MIỄN PHÍ TP HCM &amp; HÀ NỘI - GỌI NGAY 1900 633 045 HOẶC 0865 160 360</p>
-    </div>
     <!-- main -->
     <main >
 
+        <div class="header-list">
+            <div class="list-item">
+                <div class="item-check">
+                    <ul class="list-item__check">
+                        <li class="item-brithday  ">
+                            <a href="">
+                                HOA SINH NHẬT
+                            </a>
+    
+                            <ul class="list-brithday-1 list-brithday">
+                                
+                            </ul>
+                        </li>
+    
+                        <li class="item-brithday">
+                            <a href="">
+                                HOA KHAI TRƯƠNG
+                            </a>
+     
+                            <ul class="  list-brithday list-brithday-2 ">
+                             
+                            </ul>
+                         </li>
 
-
-    <!-- danh sách giỏ hàng-->
-        <div class="list-product" ng-controller="Detail">
-            <div class="grid wide product-list-item" >
-                <h1>
-
-                    <span   class="text-product">Giỏ hàng</span>
-                </h1>
-                <div class="grid wide">
-                    <div class="c-12 carttb">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td></td>
-                                    <td>Hình ảnh</td>
-                                    <td>Tên sản phẩm </td>
-                                    <td>Số lượng</td>
-                                    <td>Đơn giá</td>
-                                    <td>Tổng cộng</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr  ng-repeat="x in list" ng-init="x.isSelected = false" >
-                                    <td>
-                                        <input type="checkbox" ng-model="x.isSelected" ng-change="toggleSelection(x)"  name="" id="">
-                                    </td>
-                                    <td>
-                                        <img ng-src="{{x.anhsp}}" alt="ảnh sản phẩm" style="height: 80px ; width: 80px;">
-                                    </td>
-                                   
-                                    <td style="color: #e91e63;">{{x.tenSanPham}}</td>
-                                    <td>
-                                        <input ng-model="newQuantity" style="font-size: 16px; width: 50px; text-align: center;" type="number" value="{{x.soLuong}}" min="1">
-                                        <i ng-click="updateQuantity(x, newQuantity)"  class="fa-solid fa-rotate" style="padding: 5px; background-color: green;color: #fff; border-radius: 2px;"></i>
-                                        <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="background-color: #e91e63; border-radius: 2px; font-size: 16px; padding: 5px; cursor: pointer; color: #fff;"></i>
-                                    </td>
-                                    <td>{{x.gia}}VND</td>
-                                    <td>{{calculateTotal(x)}}VND</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td  colspan="5"><p style="float: right;" >Tổng tiền :</p></td>
-                                    <td>{{calculateSelectedTotal()}}VND</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                       
-                    </div>
-                    <div class="grid wide" style="margin-top: 20px;">
-                        <div class="c-12">
-                            <div class="" style="display: flex; justify-content: space-between;">
-
-                                <div style="width: 170px; height: 40px; background-color: #ccc; cursor: pointer; border-radius: 5px; ">
-                                    <a href="./Home.html" style="text-decoration: none;">
-
-                                        <p style="text-align: center; padding: 10px 0; color: #000;opacity: 0.6; font-size: 16px;">
-                                            Tiếp tục mua sắm
-                                        </p>
-                                    </a>
-                                </div>
-                                <div style="width: 120px; height: 40px; background-color: #e91e63; cursor: pointer;border-radius: 5px;  ">
-                                    <a href="./Bill.html" style="text-decoration: none;">
-
-                                        <p style="text-align: center; padding: 10px 0; color: #fff; font-size: 16px;">
-                                            Thanh toán
-                                        </p>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                         <li class="item-brithday">
+                            <a href="">
+                            CHỦ ĐỀ
+                            </a>
+     
+                            <ul class="list-brithday list-brithday-3">
+                             
+                            </ul>
+                         </li>
+    
+                         <li class="item-brithday">
+                            <a href="">
+                            THIẾT KẾ
+                            </a>
+     
+                             <ul class="list-brithday list-brithday-4">
+                            
+                           
+                            </ul>
+                         </li>
+                        
+                         <li class="item-brithday">
+                            <a href="">
+                            HOA TƯƠI
+                            </a>
+     
+                            <ul class="list-brithday list-brithday-5">
+                            
+                            </ul>
+                         </li>
+    
+                         <li class="item-brithday">
+                            <a href="">
+                            QUÀ TẶNG
+                            </a>
+     
+                             <ul class="list-brithday list-brithday-6">
+                            </ul>
+                         </li>
+    
+                         <li class="item-brithday"><a href="">
+                            HOA TƯƠI GIẢM 30%
+                            </a>
+                         </li>
+                    </ul>
                 </div>
-        
             </div>
         </div>
-    
+        <div class="header-notice">
+            <p class="header-notice__text">ĐẶT HOA ONLINE - GIAO MIỄN PHÍ TP HCM &amp; HÀ NỘI - GỌI NGAY 1900 633 045 HOẶC 0865 160 360</p>
+        </div>
+
+        <div class=" grid wide "   style="display: flex; height:  600px;">
+            <div class="l-9 " style="display: flex;" >
+                <div class="info-sign" style="width: 100%;">
+                    <h1 >Thông tin tài khoản của tôi</h1>
+                    <form action=""  method="post">
+                        
+                        <h3 class="text-infor__user" >Đổi mật khẩu</h3>
+                        <div class="infor-top " >
+                            <div class=" infor-item infor-1">
+                              
+                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu cũ</span>
+                                <input class="input-text" type="text" placeholder="Họ tên" value="123@1">
+                            </div>
+                            <div class=" infor-item infor-1">
+                                
+                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu mới</span>
+                                <input class="input-text" type="email" placeholder="E-mail" value="123@">
+                            </div>
+                            <div class=" infor-item infor-1">
+                              
+                                <span class=" text-name">  <span class="icon-note">*</span> Xác nhận mật khẩu</span>
+                                <input class="input-text" type="text" placeholder="Điện thoại" value="123@">
+                            </div>
+                        </div>
+
+                        <!-- <h3 class="text-infor__user" >Mật khẩu của bạn</h3>
+                        <div class="infor-top " >
+                           
+                            <div class=" infor-item infor-1">
+                                
+                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu</span>
+                                <input class="input-text" type="password" placeholder="Mật khẩu">
+                            </div>
+                        </div> -->
+
+                        <div class="check">
+                            <div class="check-item c-12" style="display: flex; justify-content: space-between;">
+                                <span class="btn-continue" ><a  style=" border-radius: 5px; background-color: #ccc; color: #fff;" href="./Home.html">Quay lại</a></span>
+                                <!-- <span class=" content-sign-check">
+                                     <input   class="check-icon" type="checkbox"> 
+                                    Tôi đã đọc và đồng ý với <a class="link-login" href="">Điều khoản & Điều kiện </a>
+                                </span> -->
+                                <span id="btn_add" class="btn-continue"><a href="">Tiếp tục</a></span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="l-3 login-3">
+                <div class="list-login">
+
+                    <ul class="login-3-list">
+                        
+                        <li><a href="./login.html"> Đăng nhập</a></li>
+                        <li><a href="">Đăng ký</a></li>
+                        <li><a href="">Đã quên mật khẩu</a></li>
+                        <li><a href="">Tài khoản của tôi</a></li>
+                        <li><a href="">Lịch sử đơn hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
     </main>
        
     
     <!-- footer -->
     <footer >
         <!-- footer-top -->
-        <div class="footer-top grid wide" >
+        <div class="footer-top grid wide" style="display: flex;">
             <div  class="l-3  footer-top-item ">
-                <a href="./Home.html ">
+                <a href="./Home.html">
 
                     <img class=" img-logo-footer" src="https://8384f55340.vws.vegacdn.vn/image/catalog/common/shop-hoa-tuoi-flowercorner-logo.png.webp"  data-loaded="true">
                 </a>
@@ -463,7 +434,6 @@
         
     </footer>
     
-    
     <!-- footer-bottom -->
     <div  class="fixed-bottom">
         <div class="list-fixed-bottom ">
@@ -543,9 +513,18 @@
             </div>
         </div>
     </div>
-    <script src="/Javascrip/home.js"></script>
-    
-    <!-- <script src="/Javascrip/api.js"></script> -->
+    <div class="bill_yes" >
+        <div class="yes_list" >
+                <div class="yes_icon">
 
+                    <i  class="icon_yes fa-solid fa-check" ></i>
+                </div>
+                <span class="name_yes" >Cập nhật thành công</span>
+        </div>
+    </div>
+    <script src="/Javascrip/bill.js"></script>
+    <script src="/Javascrip/home.js">
+
+    </script>
 </body>
 </html>

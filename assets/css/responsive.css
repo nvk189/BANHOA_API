@@ -102,9 +102,8 @@
         display: none;
     }
     .flower-items{
-        max-width: 180px;
+        max-width: 174px;
         padding: 0  10px 0 10px;
-        /* max-height: 100px; */
     }
    .img-flower .img{
         max-height: 230px;
@@ -182,7 +181,7 @@
      }
     .price-sale-item{
         font-size: 12px;
-        width: 80px;
+        width: 93px;
         height: 20px;
     }
  
@@ -365,11 +364,23 @@
 
    .flower-item {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+   }
+   .flower-ite{
+    padding: 0 7px;
+    display: flex;
+    justify-content: center;
    }
    .flower-items{
-        max-width: 170px ;
+        max-width: 177px ;
+        padding: 0 5px;
         
+   }
+   .price , .price1 , .price-sale ,.price-sale1{
+    font-size: 13px;
+   }
+   .flower-lq {
+    justify-content: space-between;
    }
    .img-flower .img{
     max-height: 180px;

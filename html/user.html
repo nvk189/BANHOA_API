@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký</title>
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
+    <title>Tài khoản</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/bill.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/detail.js"></script>
 </head>
-<body>
+<body ng-app="AppBanHoa">
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -85,7 +90,7 @@
                         </a>
                           
                         </div>
-                        <div  class="shopping-cart" >
+                        <div  class="shopping-cart" ng-controller="Detail">
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -93,30 +98,30 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                   3
+                                   {{sum}}
                                 </span>
                             </div>
                             <div class="list-cart" >
 
                                 <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                    <li ng-repeat="x in list track by x.maSanPham" class="name-cart"  style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
                                         <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
 
                                             <div class="" style="width: 20%;">
-                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
+                                                <img ng-src="{{x.anhsp}}" alt="" class="item-image">
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
     
-                                                <p class="item-name">Hoa </p>
+                                                <p class="item-name">{{x.tenSanPham}} </p>
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
     
-                                                <p class="item-quantity" style="color: #000;">3</p>x
-                                                <p  class="item-price" style="color: #000;">500000VND</p>
+                                                <p class="item-quantity" style="color: #000;">{{x.soLuong}}</p>x
+                                                <p  class="item-price" style="color: #000;">{{x.gia}}VND</p>
                                             </div>
                                         </a>
                                             <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
-                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                                <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
                                             </div>
                                     </li>
                                     <li class="Total-money">
@@ -127,11 +132,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <!-- <ul id="CartZezo" class="CartZezo">
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
-                                        <p>Giỏ hàng trống</p>
-                                    </li>
-                                </ul> -->
+                               
                             </div>
                         </div>
                         
@@ -226,34 +227,24 @@
                     <h1 >Thông tin tài khoản của tôi</h1>
                     <form action=""  method="post">
                         
-                        <h3 class="text-infor__user" >Thông tin cá nhân của bạn</h3>
+                        <h3 class="text-infor__user" >Đổi mật khẩu</h3>
                         <div class="infor-top " >
                             <div class=" infor-item infor-1">
                               
                                 <span class=" text-name">  <span class="icon-note">*</span> Họ tên</span>
-                                <input class="input-text" type="text" placeholder="Họ tên">
+                                <input class="input-text" type="text" placeholder="Họ tên" value="Nguyễn Văn Khoa">
                             </div>
                             <div class=" infor-item infor-1">
                                 
                                 <span class=" text-name">  <span class="icon-note">*</span> E - mail</span>
-                                <input class="input-text" type="email" placeholder="E-mail">
+                                <input class="input-text" type="email" placeholder="E-mail" value="khoa111@gmail.com">
                             </div>
                             <div class=" infor-item infor-1">
                               
                                 <span class=" text-name">  <span class="icon-note">*</span> Điện thoại</span>
-                                <input class="input-text" type="text" placeholder="Điện thoại">
+                                <input class="input-text" type="text" placeholder="Điện thoại" value="0123456789">
                             </div>
                         </div>
-
-                        <!-- <h3 class="text-infor__user" >Mật khẩu của bạn</h3>
-                        <div class="infor-top " >
-                           
-                            <div class=" infor-item infor-1">
-                                
-                                <span class=" text-name">  <span class="icon-note">*</span> Mật khẩu</span>
-                                <input class="input-text" type="password" placeholder="Mật khẩu">
-                            </div>
-                        </div> -->
 
                         <div class="check">
                             <div class="check-item c-12" style="display: flex; justify-content: space-between;">
@@ -262,7 +253,7 @@
                                      <input   class="check-icon" type="checkbox"> 
                                     Tôi đã đọc và đồng ý với <a class="link-login" href="">Điều khoản & Điều kiện </a>
                                 </span> -->
-                                <span class="btn-continue"><a href="">Tiếp tục</a></span>
+                                <span id="btn_add" class="btn-continue"><a href="">Tiếp tục</a></span>
                             </div>
                         </div>
                     </form>
@@ -512,6 +503,16 @@
             </div>
         </div>
     </div>
+    <div class="bill_yes" >
+        <div class="yes_list" >
+                <div class="yes_icon">
+
+                    <i  class="icon_yes fa-solid fa-check" ></i>
+                </div>
+                <span class="name_yes" >Cập nhật thành công</span>
+        </div>
+    </div>
+    <script src="/Javascrip/bill.js"></script>
     <script src="/Javascrip/home.js">
 
     </script>

@@ -13,17 +13,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// click login
-// var login = document.getElementById("list-item-login");
-// var menulogin = document.getElementById("menu-login");
-
-// login.addEventListener("click",function(){
-//     setTimeout(
-//         menulogin.style.display = 'block'
-//         ,3000)
-
-// })
-
 // header-list-item
 function renderProducts(productlist, product) {
   // const productlist = document.querySelector('.list-brithday-2');
@@ -418,16 +407,9 @@ iconClear.addEventListener("click", function () {
 
 // // Tạo một hàm để thêm một sản phẩm vào danh sách sản phẩm
 function addProductToContainer(containerId, product_list) {
-  // Tìm đối tượng chứa sản phẩm bằng cách sử dụng containerId
   const container = document.querySelector(`.${containerId}`);
-
-  // Tạo một phần tử sản phẩm mới
   const productItem = document.createElement("div");
   productItem.classList.add("flower-items", "col", "l-3", "m-12", "c-6");
-
-  // product_sale.map((product) => {
-
-  // })
   // Tạo nội dung cho phần tử sản phẩm
   const productContent = `
       <div class="img-flower">
@@ -436,7 +418,9 @@ function addProductToContainer(containerId, product_list) {
       <div class="text-flower">
         <p class="name-flower">${product_list.name}</p>
         <span class="price-sale">${product_list.salePrice}</span>
+        <span class="price-sale1">VND</span>
         <span class="price">${product_list.price}</span>
+        <span class="price1">VND</span>
       </div>
       <div class="sub-item">
        
@@ -453,10 +437,27 @@ function addProductToContainer(containerId, product_list) {
   // Gán nội dung cho phần tử sản phẩm
   productItem.innerHTML = productContent;
   const priceElement = productItem.querySelector(".price");
+  const priceElement1 = productItem.querySelector(".price1");
   const numberSalesElement = productItem.querySelector(".number_sales");
 
   if (priceElement && priceElement.textContent.trim() == "") {
     numberSalesElement.style.display = "none";
+    priceElement.style.display = "none";
+    priceElement1.style.display = "none";
+  }
+  // lấy thông tin sản phẩm
+  const orderBtn = productItem.querySelector(".order-btn");
+  if (orderBtn) {
+    orderBtn.addEventListener("click", function (event) {
+      // Lấy thông tin sản phẩm từ thuộc tính "data-product"
+      const productInfo = JSON.parse(orderBtn.getAttribute("data-product"));
+      // localStorage.clear();
+      // Lưu thông tin sản phẩm vào local storage
+      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      cartItems.push(productInfo);
+      localStorage.setItem("detail", JSON.stringify(cartItems));
+      console.log(localStorage.getItem("detail"));
+    });
   }
   // Thêm phần tử sản phẩm vào danh sách sản phẩm
   container.appendChild(productItem);
@@ -467,68 +468,76 @@ function addProductToContainer(containerId, product_list) {
 // Định nghĩa nhiều sản phẩm
 const product_sale = [
   {
+    id: 1,
     name: "Hoa test",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
+    price: "500.000",
+    salePrice: "300.000",
+    link: "#",
   },
   {
+    id: 2,
     name: "Hoa hồng  ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-scented-love.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
+    price: "500.000",
+    salePrice: "300.000",
+    link: "#",
   },
 
   {
+    id: 3,
     name: "Mặt trời hoa hồng  ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-thau-cam.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 4,
     name: "Mặt trời của anh ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-do-red-rose.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 5,
     name: "Mặt trời của anh ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/loi-yeu.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 6,
     name: "Mặt trời của anh ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/anh-mat-troi.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 7,
     name: "Mặt trời của anh ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-thach-thao-tim-hen-uoc.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 8,
     name: "Mặt trời của anh ",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-huong-duong-kinh-trong.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 ];
@@ -542,72 +551,80 @@ for (const product of product_sale) {
 // sản phẩm đặt nhiều nhất
 const product_sale_1 = [
   {
+    id: 9,
     name: "Little Tana",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     // link: "/html/detail.html"
     link: "#",
   },
   {
+    id: 10,
     name: "Baby nhỏ xinh",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-cuc-tana-litle-tana.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 
   {
+    id: 11,
     name: "Simple",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/fairy-tale.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 
   {
+    id: 12,
     name: "Khoe Sắc",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
-  {
-    name: "Khoe Sắc",
-    image:
-      "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
-  },
-  {
-    name: "Khoe Sắc",
-    image:
-      "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
-  },
-  {
-    name: "Khoe Sắc",
-    image:
-      "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
-  },
-  {
-    name: "Khoe Sắc",
-    image:
-      "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
-    link: "/html/detail.html",
-  },
+  // {
+  //   id: 13,
+  //   name: "Khoe Sắc",
+  //   image:
+  //     "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
+  //   price: "500.000",
+  //   salePrice: "300.000",
+  //   link: "/html/detail.html",
+  // },
+  // {
+  //   id: 14,
+  //   name: "Khoe Sắc",
+  //   image:
+  //     "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
+  //   price: "500.000",
+  //   salePrice: "300.000",
+  //   link: "/html/detail.html",
+  // },
+  // {
+  //   id: 15,
+  //   name: "Khoe Sắc",
+  //   image:
+  //     "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
+  //   price: "500.000",
+  //   salePrice: "300.000",
+  //   link: "/html/detail.html",
+  // },
+  // {
+  //   id: 16,
+  //   name: "Khoe Sắc",
+  //   image:
+  //     "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-hong-simple.jpg.webp",
+  //   price: "500.000",
+  //   salePrice: "300.000",
+  //   link: "/html/detail.html",
+  // },
 ];
 for (const product of product_sale_1) {
   addProductToContainer("flower-item-1", product);
@@ -616,37 +633,41 @@ for (const product of product_sale_1) {
 // sản phẩm mới
 const product_sale_2 = [
   {
+    id: 17,
     name: "Little Tana",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-sen-hong.jpg.webp",
-    price: "500,000VND",
-    salePrice: "300,000VND",
+    price: "500.000",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
   {
+    id: 18,
     name: "Baby nhỏ xinh",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-thach-thao-tim-miracle.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 
   {
+    id: 19,
     name: "Simple",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/net-quy-phai-hoa-cam-chuong.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 
   {
+    id: 20,
     name: "Khoe Sắc",
     image:
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-cam-chuong-hong-my-bae.jpg.webp",
     price: "",
-    salePrice: "300,000VND",
+    salePrice: "300.000",
     link: "/html/detail.html",
   },
 ];
@@ -792,3 +813,4 @@ leftButton.addEventListener("click", function () {
   currentIndex = (currentIndex - 2 + sliderItems.length) % sliderItems.length;
   sliderItems[currentIndex].style.display = "block";
 });
+// });

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
     <title>Trang chủ</title>
     <link rel="shortcut icon" type="image/jpg" href="/image/catalog/1_dienhoa/app/Logo-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -10,10 +11,11 @@
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/detail.js"></script>
 </head>
-<body  >
-
+<body ng-app="AppBanHoa" >
     <nav id="top">
         <div class="container grid wide  ">
             <div class="nav float-start">
@@ -34,7 +36,7 @@
                 <ul class="list-inline">
                     <li id="list-item-login" class="list-inline-item list-item-login">
                          <div class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
+                            <a href="./account.html" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user"></i> <span class="d-none d-md-inline">Tài khoản</span> <i class="fa-solid fa-caret-down"></i></a>
                             <ul id="menu-login" class="menu-login">
                                 <li><a href="/html/Sign.html" class="dropdown-item">Đăng ký</a></li>
                                 <li><a href="/html/login.html" class="dropdown-item">Đăng nhập</a></li>
@@ -85,7 +87,7 @@
                         </a>
                           
                         </div>
-                        <div  class="shopping-cart" >
+                        <div  class="shopping-cart" ng-controller="Detail" >
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -93,30 +95,30 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                   3
+                                   {{sum}}
                                 </span>
                             </div>
                             <div class="list-cart" >
 
                                 <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                    <li ng-repeat="x in list track by x.maSanPham" class="name-cart"  style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
                                         <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
 
                                             <div class="" style="width: 20%;">
-                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
+                                                <img ng-src="{{x.anhsp}}" alt="" class="item-image">
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
     
-                                                <p class="item-name">Hoa </p>
+                                                <p class="item-name">{{x.tenSanPham}} </p>
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
     
-                                                <p class="item-quantity" style="color: #000;">3</p>x
-                                                <p  class="item-price" style="color: #000;">500000VND</p>
+                                                <p class="item-quantity" style="color: #000;">{{x.soLuong}}</p>x
+                                                <p  class="item-price" style="color: #000;">{{x.gia}}VND</p>
                                             </div>
                                         </a>
                                             <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
-                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                                <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
                                             </div>
                                     </li>
                                     <li class="Total-money">
@@ -127,7 +129,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                             
+                               
                             </div>
                         </div>
                         
@@ -137,7 +139,7 @@
         </div>
     </div>
 
-    <div class="header-list">
+    <div class="header-list" >
         <div class="list-item">
             <div class="item-check">
                 <div class="list_tool" >
@@ -161,8 +163,7 @@
                             HOA SINH NHẬT
                         </a>
 
-                        <ul class="list-brithday-1 list-brithday">
-                            
+                        <ul class="list-brithday-1 list-brithday" >
                         </ul>
                     </li>
 

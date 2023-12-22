@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
+    <title>Đặt hàng</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/bill.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/Javascrip/detail.js"></script>
     
 </head>
-<body   >
+<body  ng-app="AppBanHoa"  >
     <!-- header -->
     <!-- header-top -->
     <nav id="top">
@@ -87,7 +90,7 @@
                         </a>
                           
                         </div>
-                        <div  class="shopping-cart" >
+                        <div  class="shopping-cart" ng-controller="Detail">
 
                             <a href="" class="link-icon-shopping" style="display: inline-block;">
     
@@ -95,30 +98,30 @@
                             </a>
                             <div class="amount-shop">
                                 <span class="about-shop">
-                                   1
+                                   {{sum}}
                                 </span>
                             </div>
                             <div class="list-cart" >
 
                                 <ul id="Cartsum" class="Cartsum" style="max-height:200px ;overflow-x: hidden;" >
-                                    <li class="name-cart"  style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
+                                    <li ng-repeat="x in list track by x.maSanPham" class="name-cart"  style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
                                         <a href="./detail.html" style="display: flex; justify-content: space-between;text-decoration: none  ; width: 100%;">
 
                                             <div class="" style="width: 20%;">
-                                                <img src="/assets/img/bo-hoa-hong-beauty.jpg.webp" alt="" class="item-image">
+                                                <img ng-src="{{x.anhsp}}" alt="" class="item-image">
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 60%;">
     
-                                                <p class="item-name">Hoa </p>
+                                                <p class="item-name">{{x.tenSanPham}} </p>
                                             </div>
                                             <div class="" style="display: flex; justify-content: center;   align-items: center;width: 20%;" >
     
-                                                <p class="item-quantity" style="color: #000;">3</p>x
-                                                <p  class="item-price" style="color: #000;">500000VND</p>
+                                                <p class="item-quantity" style="color: #000;">{{x.soLuong}}</p>x
+                                                <p  class="item-price" style="color: #000;">{{x.gia}}VND</p>
                                             </div>
                                         </a>
                                             <div class="icon-delete" style="display: flex; justify-content: center;   align-items: center;">
-                                                <i class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
+                                                <i ng-click="removeItem(x)" class="fa-solid fa-trash-can" style="font-size: 16px; padding-right: 3px; cursor: pointer; color: #000;"></i>
                                             </div>
                                     </li>
                                     <li class="Total-money">
@@ -129,11 +132,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <!-- <ul id="CartZezo" class="CartZezo">
-                                    <li class="name-cart" style="display: flex; justify-content: space-between;  border-bottom: 1px solid #ccc;">
-                                        <p>Giỏ hàng trống</p>
-                                    </li>
-                                </ul> -->
+                               
                             </div>
                         </div>
                         
@@ -161,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <ul id="list-item__check" class="list-item__check">
+                <ul id="list-item__check" class="list-item__check" >
                     <li class="item-brithday  ">
                         <a href="">
                             HOA SINH NHẬT
@@ -246,21 +245,22 @@
                     <div class=" infor-item infor-1">
                         <span  id="text-bill" class=" text-name">  <span class="icon-note">*</span> Họ và tên</span>
                         <p >
-                            <input  id="cusname" class="text-search" type="text" placeholder="Nhập họ và tên...">
+                            <input  id="cusname" class="text-search" type="text" placeholder="Nhập họ và tên..." value="Nguyễn Văn Khoa">
                            
                         </p>
                     </div>
                     <div class=" infor-item infor-1">
                         <span  id="text-bill" class=" text-name">  <span class="icon-note">*</span> Số điện thoại</span>
                         <p >
-                            <input id="cusphone" class="text-search" type="text" placeholder="Nhập số điện thoại...">
+                            <input id="cusphone" class="text-search" type="text" placeholder="Nhập số điện thoại..." value="0123456789">
                            
                         </p>
                     </div>
                     <div class=" infor-item infor-1">
                         <span  id="text-bill" class=" text-name">  <span class="icon-note">*</span> Địa chỉ</span>
                         <p >
-                            <input  id="cusaddress" class="text-search" type="text" placeholder="Nhập địa chỉ...">
+                            <input  id="cusaddress" class="text-search" type="text" placeholder="Nhập địa chỉ..." value="Hưng Yên">
+                            
                            
                         </p>
                     </div>
@@ -268,7 +268,13 @@
                         <span  id="text-bill" class=" text-name">  <span class="icon-note">*</span> Ngày giao hàng</span>
                         <p >
                             <input  id="cusdate" class="text-search" type="datetime-local" >
-                           
+                            <script>
+                                const currentDate = new Date();
+                              
+                                const currentDateString = currentDate.toISOString().slice(0, 16); // Cắt bớt giây và mili giây
+                              
+                                document.getElementById("cusdate").value = currentDateString;
+                              </script>
                         </p>
                     </div>
 
@@ -277,7 +283,7 @@
             <!--  thông tin sản phẩm -->
             <div class="c-6 m-6 bill_product" >
                 <h3>Thông tin sản phẩm</h3>
-                <table>
+                <table ng-controller="Detail">
                     <thead>
                         <tr>
                             <th>Hình ảnh</th>
@@ -287,24 +293,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr >
+                        <tr ng-repeat="x in listBill " >
                             <td style="text-align: center;">
-                                <img src="https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-baby-mix-hong-duy-nhat.jpg.webp" alt="" style="width: 50px; height: 50px;border: 4px solid #ccc; border-radius: 5px;"></td>
-                            <td style="text-align: center;">1xHoa lan vàng</td>
-                            <td style="text-align: center;">500000VND</td>
-                            <td style="text-align: center;" ><i  class="fa-solid fa-circle-xmark" style="color: #fff; padding: 10px; background-color: #e91e63; border-radius: 5px; cursor: pointer;"></i></td>
+                                <img ng-src="{{x.anhsp}}" alt="ảnh sản phẩm" style="width: 50px; height: 50px;border: 4px solid #ccc; border-radius: 5px;"></td>
+                            <td style="text-align: center;">{{x.soLuong}}x{{x.tenSanPham}}</td>
+                            <td style="text-align: center;">{{x.gia}}VND</td>
+                            <td style="text-align: center;" ><i ng-click="removeProduct($index)" class="fa-solid fa-circle-xmark" style="color: #fff; padding: 10px; background-color: #e91e63; border-radius: 5px; cursor: pointer;"></i></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="3" style="text-align: right; font-size: 16px;"  > Tổng tiền:</td>
-                            <td style="text-align: center;">500000VND</td>
+                            <td style="text-align: center;">{{totalbill}}VND</td>
                         </tr>
                     </tfoot>
                 </table>
                 <div  class="btn_add-bill c-12" >
-                    <div  class="c-7 btn_add" >
-                        <p  style="padding: 10px; font-size: 20px;">
+                    <div id="btn_add" class="c-7 btn_add" >
+                        <p  style="padding: 10px; font-size: 20px;" >
 
                             Đặt hàng
                         </p>
@@ -551,6 +557,16 @@
             </div>
         </div>
     </div>
+    <div class="bill_yes" >
+        <div class="yes_list" >
+                <div class="yes_icon">
+
+                    <i  class="icon_yes fa-solid fa-check" ></i>
+                </div>
+                <span class="name_yes" >Đặt hàng thành công</span>
+        </div>
+    </div>
+    <script src="/Javascrip/bill.js"></script>
     <script src="/Javascrip/home.js">
 
     </script>

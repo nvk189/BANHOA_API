@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
-    <title>Giỏ hàng</title>
+    <title>Lịch sử đơn hàng</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/bass.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
@@ -243,14 +243,14 @@
             <div class="grid wide product-list-item" >
                 <h1>
 
-                    <span   class="text-product">Giỏ hàng</span>
+                    <span   class="text-product">Lịch sử đặt hàng</span>
                 </h1>
                 <div class="grid wide">
                     <div class="c-12 carttb">
                         <table>
                             <thead>
                                 <tr>
-                                    <td></td>
+                                    
                                     <td>Hình ảnh</td>
                                     <td>Tên sản phẩm </td>
                                     <td>Số lượng</td>
@@ -260,9 +260,7 @@
                             </thead>
                             <tbody>
                                 <tr  ng-repeat="x in list" ng-init="x.isSelected = false" >
-                                    <td>
-                                        <input type="checkbox" ng-model="x.isSelected" ng-change="toggleSelection(x)"  name="" id="">
-                                    </td>
+                                   
                                     <td>
                                         <img ng-src="{{x.anhsp}}" alt="ảnh sản phẩm" style="height: 80px ; width: 80px;">
                                     </td>
@@ -277,12 +275,7 @@
                                     <td>{{calculateTotal(x)}}VND</td>
                                 </tr>
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td  colspan="5"><p style="float: right;" >Tổng tiền :</p></td>
-                                    <td>{{calculateSelectedTotal()}}VND</td>
-                                </tr>
-                            </tfoot>
+
                         </table>
                        
                     </div>
@@ -291,18 +284,18 @@
                             <div class="" style="display: flex; justify-content: space-between;">
 
                                 <div style="width: 170px; height: 40px; background-color: #ccc; cursor: pointer; border-radius: 5px; ">
-                                    <a href="./Home.html" style="text-decoration: none;">
+                                    <a href="./Cart.html" style="text-decoration: none;">
 
                                         <p style="text-align: center; padding: 10px 0; color: #000;opacity: 0.6; font-size: 16px;">
-                                            Tiếp tục mua sắm
+                                            Giỏ hàng
                                         </p>
                                     </a>
                                 </div>
                                 <div style="width: 120px; height: 40px; background-color: #e91e63; cursor: pointer;border-radius: 5px;  ">
-                                    <a href="./Bill.html" style="text-decoration: none;">
+                                    <a href="./Home.html" style="text-decoration: none;">
 
                                         <p style="text-align: center; padding: 10px 0; color: #fff; font-size: 16px;">
-                                            Thanh toán
+                                            Tiếp tục 
                                         </p>
                                     </a>
                                 </div>
