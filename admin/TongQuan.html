@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
     <link rel="stylesheet" href="../css/style_mainQT.css">
     <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
     <script src="../js/jquery-3.6.0.min.js"></script>
-    <script src="/Javascrip/click.js"></script>
-  
+    <script src="../js/click.js"></script>
+    <script src="../js/chart.js"></script>
+    <script type="text/javascript"   
+        src="https://canvasjs.com/assets/script/canvasjs.min.js">  
+    </script>
+    <title>Tổng quan</title>
 </head>
 
 <body>
-    
     <section class="header">
         <a href="javascript:void(0);" class="icon" onclick="openBTN()">
             <i class="fas fa-bars"></i>
@@ -21,8 +25,7 @@
             Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
             <div class="box-login-bottom" id="box-b">
                 <button onclick="TTTaiKhoan()"><i class="fas fa-user-alt"></i> Tài khoản</button>
-                <!-- <button onclick="LogOut();"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button> -->
-                <!-- <button ><i class="fas fa-sign-out-alt"></i> Đăng xuất</button> -->
+                <button onclick="LogOut();"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
             </div>
         </div>
     </section>
@@ -37,8 +40,8 @@
                 <button onclick="NhanVien()"><i class="fas fa-user"></i> Nhân viên</button>
                 <button onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</button>
                 <button onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</button>
-                <!-- <button onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</button> -->
-                <!-- <button onclick="ThietLap()"><i class="fas fa-cogs"></i> Thiết lập</button> -->
+                <button onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</button>
+                <button onclick="ThietLap()"><i class="fas fa-cogs"></i> Thiết lập</button>
             </div>
             <div class="bx-left" id="button-left">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeBTN()"><i
@@ -52,8 +55,8 @@
                     <li onclick="NhanVien()"><i class="fas fa-user"></i> Nhân viên</li>
                     <li onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</li>
                     <li onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</li>
-                    <!-- <li onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</li> -->
-                    <!-- <li onclick="ThietLap()"><i class="fas fa-cogs"></i> Thiết lập</li> -->
+                    <li onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</li>
+                    <li onclick="ThietLap()"><i class="fas fa-cogs"></i> Thiết lập</li>
                 </ul>
             </div>
             <div class="col-11 col-s-12 content">

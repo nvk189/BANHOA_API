@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style_mainQT.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/core.css">
+    <link rel="shortcut icon" type="image/jpg" href="/assets/img/Logo.webp">
+    <title>Thống kê</title>
+    <script src="https://kit.fontawesome.com/e06076012c.js" crossorigin="anonymous"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/click.js"></script>
+    <script src="/Javascrip/angular.min.js"></script>
+    <script src="/Javascrip/global.js"></script>
+    <script src="/js/thongke.js"></script>
+</head>
+
+<body  ng-app="AppBanHoa" ng-controller="thongkesp">
+    <section class="header">
+        <a href="javascript:void(0);" class="icon" onclick="openBTN()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div class="box-login" id="box-t">
+            Xin chào, <span id="ten_nv">Admin</span> <i class="fas fa-sort-down"></i>
+            <div class="box-login-bottom" id="box-b">
+                <button onclick="TTTaiKhoan()"><i class="fas fa-user-alt"></i> Tài khoản</button>
+                <button onclick="TTMatKhau();"><i class="fas fa-sign-out-alt"></i> Đổi mật khẩu</button>
+                <button onclick="LogOut();"><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="row">
+            <div class="col-1 col-s-12 category">
+                <button onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</button>
+                <button onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</button>
+                <button onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</button>
+                <button onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i> Thống kê</button>
+                
+            </div>
+            <div class="bx-left" id="button-left">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeBTN()"><i
+                        class="far fa-window-close"></i></a>
+                <ul>
+                    <li onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</li>
+                    <li onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</li>
+                    <li onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</li>
+                    <li onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i></i>Thống kê</li>
+                </ul>
+            </div>
+          
+                       
+
+            <div class="col-11 col-s-12 col-m-12 overview Page" >
+                <div class="col-12 col-s-12 col-m-12 overview1">
+                    <!-- <span  class="col-12 col-s-12 col-m-12">KẾT QUẢ KINH DOANH TRONG NGÀY</span> -->
+                    
+                    <div class="chooseover">
+                        <label for="txt_over" style="font-size: 32px;">Tổng quan về thống kê </label>
+                        <select onchange="Thongke()" id="txt_over" style="outline: none ; padding: 0;margin-left: 0;">
+                            <option  value="tuan">Theo tuần</option>
+                            <option value="thang">Theo tháng</option>
+                            <option value="nam">Theo năm</option>
+                          
+                        </select>
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales">
+                        <div id="chartContainerTuan" style="height:400px;width: 60%; margin: auto;" > </div>
+                        
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales_week">
+                        <div class="money_week week1">
+                            <span>Doanh thu<br><span>63.536.000đ</span></span>
+                        </div>
+                        <div class="product_week week1">
+                        <span>Đơn hàng : <span>12</span><br>
+                        <span>Sản phẩm : <span>12</span><br>
+                        </div>
+                        <div class="return_week week1">
+                            <span>Đơn hoàn trả<br><span>0</span><br>
+                        </div>
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales" >
+                        <div id="chartContainerthang" style="height:400px;width: 100%" > </div>
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales_week">
+                        <div class="money_week week1">
+                            <span>Doanh thu<br><span>132.340.000đ</span></span>
+                        </div>
+                        <div class="product_week week1">
+                        <span>Đơn hàng : <span>780</span><br>
+                        <span>Sản phẩm : <span>1230</span><br>
+                        </div>
+                        <div class="return_week week1">
+                            <span>Đơn hoàn trả<br><span>15</span><br>
+                        </div>
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales">
+                        <div id="chartContainer" style="height:400px;width: 100%" > </div>
+                    </div>
+                    <div class="col-12 col-s-12 col-m-12 sales_week">
+                        <div class="money_week week1">
+                            <span>Doanh thu<br><span>867.000.0000đ</span></span>
+                        </div>
+                        <div class="product_week week1">
+                        <span>Đơn hàng : <span>1243</span><br>
+                        <span>Sản phẩm : <span>57656</span><br>
+                        </div>
+                        <div class="return_week week1">
+                            <span>Đơn hoàn trả<br><span>123</span><br>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        <script>
+            var user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = "../admin/login.html";
+            }
+
+            LoadUser();
+        </script>
+            <script src="../js/chart.js"></script>
+        <script type="text/javascript"  src="https://canvasjs.com/assets/script/canvasjs.min.js">  </script>
+    </section>
+</body>
+
+</html>
