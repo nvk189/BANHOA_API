@@ -9,8 +9,8 @@ app.controller("BillOut", function ($scope) {
   var formattedDate = currentDate.toISOString().split("T")[0];
   document.getElementById("datetimeInput").value = formattedDate;
 
-  // var existingData = JSON.parse(localStorage.getItem("hanghoa4")) || [];
-  var storedData = localStorage.getItem("hanghoa4");
+  // var existingData = JSON.parse(localStorage.getItem("dathang")) || [];
+  var storedData = localStorage.getItem("dathang");
   var existingData = storedData ? JSON.parse(storedData) : [];
   // hiển thị thêm sản phẩm
   $scope.addProduct = function () {
@@ -72,29 +72,28 @@ app.controller("BillOut", function ($scope) {
       list_json_chitiethoadon: $scope.products,
     };
     existingData.push(data);
-    localStorage.setItem("hanghoa4", JSON.stringify(existingData));
+    localStorage.setItem("dathang", JSON.stringify(existingData));
     alert("Thêm thành công");
   };
   $scope.gethdban = function () {
-    $scope.createBan = JSON.parse(localStorage.getItem("hanghoa4"));
+    $scope.createBan = JSON.parse(localStorage.getItem("dathang"));
     updatePagination($scope.createBan);
   };
 
   $scope.removeProduct = function (index) {
     $scope.createBan.splice(index, 1);
-    localStorage.setItem("hanghoa4", JSON.stringify($scope.ban));
+    localStorage.setItem("dathang", JSON.stringify($scope.createBan));
     alert("Xóa thành công");
   };
   $scope.removeProduct1 = function (index) {
     $scope.products.splice(index, 1);
-    alert("Xóa thành công");
   };
 
   // hàm sửa
   $scope.sua = function () {
     if ($scope.mahdb !== "") {
       for (let i = 0; i < $scope.createBan.length; i++) {
-        if ($scope.createBan[i].maChuyenMuc === $scope.maChuyenMuc) {
+        if ($scope.createBan[i].mahd === $scope.mahdb) {
           $scope.createBan[i].mahd = $scope.mahdb;
           $scope.createBan[i].hoTen = $scope.tenkh;
           $scope.createBan[i].dienThoai = $scope.sodt;
@@ -102,7 +101,7 @@ app.controller("BillOut", function ($scope) {
           $scope.createBan[i].ngayDatHang = $scope.ngayban;
           $scope.createBan[i].tongTien = $scope.Total();
           $scope.createBan[i].list_json_chitiethoadon = $scope.products;
-          localStorage.setItem("hanghoa4", JSON.stringify($scope.createBan));
+          localStorage.setItem("dathang", JSON.stringify($scope.createBan));
           break;
         }
       }
@@ -111,6 +110,8 @@ app.controller("BillOut", function ($scope) {
       alert("Chọn thông tin cần sửa");
     }
   };
+  console.log($scope.createBan);
+
   $scope.gethdban();
   // // phân trang
   function updatePagination(maloaisp) {

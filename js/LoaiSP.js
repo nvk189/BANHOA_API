@@ -14,6 +14,7 @@ app.controller("LoaiSP", function ($scope, $http) {
 
     existingData.push(newData);
     localStorage.setItem("loaisp", JSON.stringify(existingData));
+    alert("Thêm thành công");
   };
 
   // sửa
@@ -28,6 +29,7 @@ app.controller("LoaiSP", function ($scope, $http) {
           break;
         }
       }
+      alert("Cập nhật thành công");
     } else {
       alert("Chọn thông tin cần sửa");
     }
