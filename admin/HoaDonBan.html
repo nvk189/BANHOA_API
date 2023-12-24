@@ -38,13 +38,8 @@
                 <button onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</button>
                 <button onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</button>
                 <button onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</button>
-                <button onclick="NhaCungCap()"><i class="fas fa-truck"></i> Nhà cung cấp</button>
-                <button onclick="KhachHang()"><i class="fas fa-users"></i> Khách hàng</button>
-                <button onclick="NhanVien()"><i class="fas fa-user"></i>Tài khoản</button>
-                <button onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</button>
-                <button class="active" onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</button>
+                <button onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</button>
                 <button onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i> Thống kê</button>
-                <button onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</button>
                 
             </div>
             <div class="bx-left" id="button-left">
@@ -54,13 +49,8 @@
                     <li onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</li>
                     <li onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</li>
                     <li onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</li>
-                    <li onclick="NhaCungCap()"><i class="fas fa-truck"></i> Nhà cung cấp</li>
-                    <li onclick="KhachHang()"><i class="fas fa-users"></i> Khách hàng</li>
-                    <li onclick="NhanVien()"><i class="fas fa-user"></i> Tài khoản</li>
-                    <li onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</li>
                     <li onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</li>
                     <li onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i></i>Thống kê</li>
-                    <li onclick="TinTuc()"><i class="fas fa-newspaper"></i> Tin tức</li>
                 </ul>
             </div>
             <div class="col-11 col-s-12 content">
@@ -102,26 +92,17 @@
                                     <label for="txtright">Ngày bán:</label>
                                 </div>
                                 <div class="col-12 col-s-12 padding-box">
-                                    <input ng-model="ngayban" type="datetime-local" id="datetimeInput" name="datetimeInput">
-                                  
+                                    <input ng-model="ngayban" type="date" id="datetimeInput" name="datetimeInput" >
                                 </div>
+                               
+                                
                                 <div class="col-12 col-s-12 padding-box">
                                     <label for="txtright">Tổng tiền:</label>
                                 </div>
                                 <div class="col-12 col-s-12 padding-box">
                                     <input ng-model="tongtien" type="number" id="tongtien" value="0" readonly>
                                 </div>
-                                <!-- <div class="col-12 col-s-12 padding-box">
-                                    <label for="txtright">Trạng thái đơn hàng </label>
-                                </div>
-                                <div class="col-12 col-s-12 padding-box">
-                                    <select  ng-model="trangthai" ng-change="TrangthaiChanged()" name="trangthaihd" id="trangthaihd"   >
-                                        <option value="choose">---Chọn trạng thái---</option>
-                                        <option value="true">Thành công</option>
-                                        <option value="false">Thất bại</option>
-                                        
-                                    </select>
-                                </div> -->
+                               
                             </form>
                         </div>
                         <hr>
@@ -138,27 +119,12 @@
                                 </thead>
                                 <tbody id="DSSanPham">
                                     <tr ng-repeat="product in products">
-                                        <td><input type="text" ng-model="product.maSanPham" placeholder="Mã sản phẩm..."></td>
+                                        <td><input type="text" ng-model="product.tenSanPham" placeholder="Tên sản phẩm..."></td>
                                         <td><input type="number" ng-model="product.soLuong" placeholder="Số lượng..."></td>
                                         <td><input type="number" ng-model="product.gia" placeholder="Đơn giá..."></td>
-                                        <td><button ng-click="removeProduct($index)"><i class="fas fa-trash"></i></button></td>
+                                        <td><button ><i ng-click="removeProduct1($index)" class="fas fa-trash"></i></button></td>
                                     </tr>
-                                    <tr ng-repeat="x in list">
-                                        <td><input type="text" ng-model="x.maSanPham" placeholder="Mã sản phẩm..."></td>
-                                        <td>
-                                            <span ng-repeat="detail in listdetailMap[x.maSanPham]">
-                                                <input type="text" ng-model="detail.tenSanPham" placeholder="Tên sản phẩm...">
-                                            </span>
-                                        </td>
-                                        <td><input type="number" ng-model="x.soLuong" placeholder="Số lượng..."></td>
-                                        <td><input type="number" ng-model="x.gia" placeholder="Đơn giá..."></td>
-                                        <td>
-                                            <!-- <button ng-click="removeProduct1($index)">
-                                            <i class="fas fa-trash"></i>
-                                            </button> -->
-                                        </td>
-                                       
-                                    </tr>
+                                    
 
                                 </tbody>
                             </table>
@@ -170,9 +136,9 @@
                             ng-click="them()">Thêm hóa đơn bán</button>
                         <button class="btn-form" style="background-color: rgba(227, 32, 21, 0.8);"
                             ng-click="NhapMoi()">Nhập mới</button>
-                            <!-- <button ng-click="preparePrintData()"class="btn-form" style="background-color: rgba(227, 32, 21, 0.8);">
-                                <a href="./In.html">In hóa đơn</a>
-                             </button> -->
+                        <button ng-click="gethdban()"class="btn-form" style="background-color: blue;">
+                                Cập nhật thông tin
+                        </button>
                     </div>
                 </div>
                 <div class="col-7 col-s-12 content">
@@ -204,25 +170,23 @@
                                             <th>Địa chỉ</th>
                                             <th>Ngày bán</th>
                                             <th>Tổng tiền</th>
-                                            <th>Trạng thái</th>
                                             <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody id="listExport"></tbody>
                                     <tbody>
-                                        <tr ng-repeat="x in Ban"  ng-click="load(x)">
+                                        <tr ng-repeat="x in createBan"  ng-click="load(x)">
                                             <td style="text-align: center;padding-top: 10px;"><input type="checkbox"
                                                     value="" id=""></td>
-                                            <td >{{x.maDonHang}}</td>
+                                            <td >{{x.mahd}}</td>
                                             <td >{{x.hoTen}}</td>
                                             <td >{{x.dienThoai}}</td>
                                             <td >{{x.diaChi}}</td>
-                                            <td >{{x.ngayGiaoHang}}</td>
+                                            <td>{{x.ngayDatHang | date:'dd/MM/yyyy'}}</td>
                                             <td >{{x.tongTien}}</td>
-                                            <td >{{x.trangThai ==0? 'Thất bại ': 'Thành công'}}</td>
                                             <td >
                                                 <i ng-click="sua()" class="fas fa-edit" title="Sửa"></i>
-                                                <i ng-click="xoa()" class="fas fa-trash-alt" title="Xóa"></i>
+                                                <i ng-click="removeProduct(x)" class="fas fa-trash-alt" title="Xóa"></i>
                                                 
                                             </td>
                                         </tr>

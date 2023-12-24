@@ -47,8 +47,8 @@ app.controller("LoaiSP", function ($scope, $http) {
 
   // xóa
   $scope.removeProduct = function (index) {
-    $scope.maloaisp.splice(index, 1);
-    localStorage.setItem("loaisl", JSON.stringify($scope.maloaisp));
+    $scope.loaisp.splice(index, 1);
+    localStorage.setItem("loaisp", JSON.stringify($scope.loaisp));
   };
   // cập nhật thông tin
   $scope.GetLoaiSP = function () {
