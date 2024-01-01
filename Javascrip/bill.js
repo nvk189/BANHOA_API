@@ -5,5 +5,5 @@ btnadd.addEventListener("click", () => {
   billYes.style.right = "0";
   setTimeout(() => {
     billYes.style.right = "100%";
-  }, 3000);
+  }, 2000);
 });

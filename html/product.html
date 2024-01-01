@@ -249,18 +249,14 @@
                     </div>
                     <div class="page-list">
                         
-                        <div class="number-text">
-                            <label for="">Sắp xếp theo</label>
-                            <select id="input-sort" class="form-select" onchange="location = this.value;">
-                                <option value="">Mặc định</option>
-                                <option value="">Tên (A - Z)</option>
-                                <option value="">Tên (Z - A)</option>
-                                <option value="">Giá (Thấp&gt; Cao)</option>
-                                <option value="">Giá (Cao&gt; Thấp)</option>
-                                <option value="">Mô hình (A - Z)</option>
-                                <option value="" selected="">Mô hình (Z - A)</option>
+                            <div class="number-text">
+                                <label for="">Sắp xếp theo</label>
+                                <select id="input-sort" class="form-select" onchange="sapXepSanPham()" >
+                                    <option value="choose">---Mặc định---</option>
+                                    <option value="1">Giá (Thấp > Cao)</option>
+                                    <option value="2">Giá (Cao > Thấp)</option>
                                 </select>
-                        </div>
+                            </div>
 
                         <div class="number-page">
                             <label for="">Số lượng</label>

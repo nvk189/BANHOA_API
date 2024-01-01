@@ -474,7 +474,7 @@ const product_sale = [
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-endless-love.jpg.webp",
     price: "500.000",
     salePrice: "300.000",
-    link: "#",
+    link: "/html/detail.html",
   },
   {
     id: 2,
@@ -483,7 +483,7 @@ const product_sale = [
       "https://8384f55340.vws.vegacdn.vn/image/cache/catalog/products/August%202023/bo-hoa-scented-love.jpg.webp",
     price: "500.000",
     salePrice: "300.000",
-    link: "#",
+    link: "/html/detail.html",
   },
 
   {

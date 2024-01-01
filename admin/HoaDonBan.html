@@ -35,12 +35,14 @@
     <section class="main">
         <div class="row">
             <div class="col-1 col-s-12 category">
-                <button onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</button>
+                <button class="active" onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</button>
                 <button onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</button>
                 <button onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</button>
+                <button onclick="NhaCungCap()"><i class="fas fa-truck"></i> Nhà cung cấp</button>
+                <button onclick="NhanVien()"><i class="fas fa-user"></i> Tài khoản</button>
+                <button onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</button>
                 <button onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</button>
-                <button onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i> Thống kê</button>
-                
+                <button onclick="ThongKe()"><i class="fas fa-shopping-cart"></i> Thống kê</button>
             </div>
             <div class="bx-left" id="button-left">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeBTN()"><i
@@ -49,8 +51,11 @@
                     <li onclick="TongQuan()"><i class="fas fa-tachometer-alt"></i> Tổng quan</li>
                     <li onclick="LoaiSanPham()"><i class="fas fa-boxes"></i> Loại sản phẩm</li>
                     <li onclick="SanPham()"><i class="fas fa-barcode"></i> Sản phẩm</li>
+                    <li onclick="NhaCungCap()"><i class="fas fa-truck"></i> Nhà cung cấp</li>
+                    <li onclick="NhanVien()"><i class="fas fa-user"></i> Tài khoản</li>
+                    <li onclick="HoaDonNhap()"><i class="fas fa-file-import"></i> Hóa đơn nhập</li>
                     <li onclick="HoaDonBan()"><i class="fas fa-shopping-cart"></i> Hóa đơn bán</li>
-                    <li onclick="ThongKe()"><i class="fa-solid fa-calendar-days"></i></i>Thống kê</li>
+                    <li onclick="ThongKe()"><i class="fas fa-shopping-cart"></i> Thống kê</li>
                 </ul>
             </div>
             <div class="col-11 col-s-12 content">
@@ -119,9 +124,9 @@
                                 </thead>
                                 <tbody id="DSSanPham">
                                     <tr ng-repeat="product in products">
-                                        <td><input type="text" ng-model="product.tenSanPham" placeholder="Tên sản phẩm..."></td>
-                                        <td><input type="number" ng-model="product.soLuong" placeholder="Số lượng..."></td>
-                                        <td><input type="number" ng-model="product.gia" placeholder="Đơn giá..."></td>
+                                        <td><input style="text-align: center; border-right: 1px solid #ccc;" type="text" ng-model="product.tenSanPham" placeholder="Tên sản phẩm..."></td>
+                                        <td><input style="text-align: center; border-right: 1px solid #ccc;" type="number" ng-model="product.soLuong" placeholder="Số lượng..."></td>
+                                        <td><input style="text-align: center; border-right: 1px solid #ccc;" type="number" ng-model="product.gia" placeholder="Đơn giá..."></td>
                                         <td><button ><i ng-click="removeProduct1($index)" class="fas fa-trash"></i></button></td>
                                     </tr>
                                     
@@ -138,6 +143,9 @@
                             ng-click="NhapMoi()">Nhập mới</button>
                         <button ng-click="gethdban()"class="btn-form" style="background-color: blue;">
                                 Cập nhật thông tin
+                        </button>
+                        <button id="Inhd" ng-click="printInvoice()" class="btn-form" style="background-color: rgb(51, 128, 144);">
+                                In hóa đơn
                         </button>
                     </div>
                 </div>
@@ -214,6 +222,7 @@
         </div>
       
     </section>
+    
 </body>
 
 </html>

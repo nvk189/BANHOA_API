@@ -12,10 +12,7 @@
     
 
 }
-/* input{
-    outline: none;
-    border: none;
-} */
+
 .item-search{
     margin-bottom: 15px;
 }
@@ -47,12 +44,16 @@ h4{
     align-items: center;
     justify-content: center;
 }
+#chuyenmuc:focus-visible , #list_item_search:focus-visible{
+    outline: none;
+
+}
 #chuyenmuc{
     height: 48px;
     margin-top: 17px;
     font-size: 16px;
     border-radius: 5px;
-    border-color: none;
+    border-color: #ccc;
     padding-left: 10px;
 }
 .btn_search{

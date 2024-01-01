@@ -5,9 +5,11 @@ app.controller("BillOut", function ($scope) {
   // $scope.ban = [];
   $scope.createBan = [];
 
+  let print = document.getElementById("Inhd");
   var currentDate = new Date();
   var formattedDate = currentDate.toISOString().split("T")[0];
-  document.getElementById("datetimeInput").value = formattedDate;
+  $scope.ngayban = formattedDate;
+  // document.getElementById("datetimeInput").value = formattedDate;
 
   // var existingData = JSON.parse(localStorage.getItem("dathang")) || [];
   var storedData = localStorage.getItem("dathang");
@@ -136,5 +138,49 @@ app.controller("BillOut", function ($scope) {
     $scope.getData();
   }
 
-  // thống kê hóa đơn hiên jtiaj
+  $scope.printInvoice = function () {
+    // Lấy dữ liệu từ các trường input
+    var mahdb = document.getElementById("mahd").value;
+    var tenkh = document.getElementById("khachhang").value;
+    var sodt = document.getElementById("sdtkh").value;
+    var diachi = document.getElementById("diachikh").value;
+    var ngayban = document.getElementById("datetimeInput").value;
+    var tongtien = document.getElementById("tongtien").value;
+
+    // Lấy dữ liệu từ bảng chi tiết
+    var tableData = [];
+    var tableRows = document
+      .getElementById("DSSanPham")
+      .getElementsByTagName("tr");
+    for (var i = 0; i < tableRows.length; i++) {
+      var cells = tableRows[i].getElementsByTagName("td");
+      if (cells.length === 4) {
+        var product = {
+          tenSanPham: cells[0].getElementsByTagName("input")[0].value,
+          soLuong: cells[1].getElementsByTagName("input")[0].value,
+          gia: cells[2].getElementsByTagName("input")[0].value,
+        };
+        tableData.push(product);
+      }
+    }
+
+    // Tạo đối tượng chứa dữ liệu
+    var invoiceData = {
+      mahdb: mahdb,
+      tenkh: tenkh,
+      sodt: sodt,
+      diachi: diachi,
+      ngayban: ngayban,
+      tongtien: tongtien,
+      products: tableData,
+    };
+
+    // Chuyển đối tượng thành JSON và lưu vào local storage
+    localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
+
+    $scope.Print = JSON.parse(localStorage.getItem("invoiceData"));
+    window.location.href = "../admin/In.html";
+    console.log(localStorage.getItem("invoiceData"));
+  };
+  console.log($scope.Print);
 });

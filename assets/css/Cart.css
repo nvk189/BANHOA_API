@@ -1,25 +1,30 @@
 
 table {
-    width: 100%; /* Bảng chiếm toàn bộ chiều rộng của container cha */
-    border-collapse: collapse; /* Loại bỏ khoảng cách giữa ô */
+    width: 100%; 
+    border-collapse: collapse; 
 }
 
 table th, table td {
-    border: 1px solid #ccc; /* Đường viền cho ô */
-    padding: 5px; /* Khoảng cách bên trong ô */
-    text-align: center; /* Căn giữa nội dung của ô */
+    border: 1px solid #ccc; 
+    padding: 5px; 
+    text-align: center; 
 }
 
 thead {
-    background-color: #fff; /* Màu nền cho phần header */
-    color: black; /* Màu chữ trong header */
-    font-weight: bold; /* Văn bản in đậm trong header */
+    background-color: #fff; 
+    color: black; 
+    font-weight: bold; 
 }
 
 thead td {
-    padding: 15px; /* Khoảng cách bên trong ô header */
+    padding: 15px; 
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Màu nền xen kẽ cho hàng chẵn */
+tbody tr:hover {
+    background-color: #f2f2f2; 
+}
+
+/*  check box */
+#checkbox{
+    cursor: pointer;
 }

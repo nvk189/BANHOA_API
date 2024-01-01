@@ -265,10 +265,10 @@
                                     {{x.salePrice}}
                                 </h4>
                                 <span style="font-size: 24px;">VND</span>
-                                <h4  class="detail-money_2" style="font-weight: 300; font-size: 24px; color: #888; text-decoration: line-through;margin-left: 10px; ">
+                                <h4 ng-if="x.price !== '' " id="detail-money_2"  class="detail-money_2" style="font-weight: 300; font-size: 24px; color: #888; text-decoration: line-through;margin-left: 10px; ">
                                     {{x.price}}
                                 </h4>
-                                <span class="detail-money_VND" style="font-size: 24px; color: #888; text-decoration: line-through;">VND</span>
+                                <span ng-if="x.price !== ''" id="detail-money_VND" class="detail-money_VND" style="font-size: 24px; color: #888; text-decoration: line-through;">VND</span>
                                 
                              
                             </div>
@@ -384,7 +384,7 @@
                     </div>
                     <div class="" style="margin-top: 20px; padding: 0 10px;">
                     
-                        <span class="" style="">
+                        <span class="" >
                             Hoa baby trắng tượng trưng cho tình yêu tinh khiết, sự trong trắng, mỏng manh, thanh tao như chính vẻ ngoài của hoa mang lại. Kết hợp với 5 bông hồng kem càng mang lại sự tinh khiết cho mối tình của bạn. 
                         </span>
                         <p style="font-weight: bold; padding: 10px 0;">Bó hoa Endless Love được thiết kế từ</p>

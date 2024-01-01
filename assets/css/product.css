@@ -30,7 +30,8 @@
     display: flex;
 }
 .number-page{
-    display: flex;
+    
+    display: none;
     justify-content: flex-end;
 }
 .icon-menu-list i {
@@ -86,5 +87,10 @@
 .flower-item{
     display: flex;
      justify-content: center;
+}
+
+/*  */
+#input-sort:focus-visible{
+    outline: none;
 }
 

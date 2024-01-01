@@ -69,17 +69,12 @@ app.controller("Detail", function ($scope) {
 
   // hàm xóa
   $scope.removeItem = function (item) {
-    // Tìm vị trí của sản phẩm trong danh sách
     var index = $scope.list.indexOf(item);
 
-    // Nếu sản phẩm tồn tại trong danh sách, xóa nó
     if (index !== -1) {
       $scope.list.splice(index, 1);
-
-      // Cập nhật lại localStorage sau khi xóa
       localStorage.setItem("cartItem", JSON.stringify($scope.list));
       $scope.list = JSON.parse(localStorage.getItem("cartItem"));
-      // cập nhật lại tổng tiên fsau khi xóa
       // $scope.calculateTotalAllProducts();
     }
   };
@@ -98,19 +93,14 @@ app.controller("Detail", function ($scope) {
       return total.toLocaleString();
     } else {
       console.error("Giá trị không hợp lệ: " + item.gia);
-      return "0"; // hoặc giá trị mặc định khác tùy thuộc vào yêu cầu của bạn
+      return "0";
     }
   };
   // update lại khi thay đổi số lượng
   $scope.updateQuantity = function (item, newQuantity) {
-    // Tìm vị trí của sản phẩm trong danh sách
     var index = $scope.list.indexOf(item);
-
-    // Nếu sản phẩm tồn tại trong danh sách, cập nhật số lượng mới
     if (index !== -1) {
       $scope.list[index].soLuong = newQuantity;
-
-      // Cập nhật lại localStorage sau khi cập nhật số lượng
       localStorage.setItem("cartItem", JSON.stringify($scope.list));
     }
   };

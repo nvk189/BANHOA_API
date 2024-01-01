@@ -85,9 +85,9 @@
                     <div class="logo-list-right " >
 
                         <div class="list-three__left "   >
-                          <input  class="text-search" type="text" placeholder="Tìm kiếm">
+                          <input id="text-search" class="text-search" type="text" placeholder="Tìm kiếm">
                           <a href="" style="display: inline-block;">
-                            <i  class="fa-solid fa-magnifying-glass icon-search"></i>
+                            <i id="submit-btn"  class="fa-solid fa-magnifying-glass icon-search"></i>
                           </a>
                           
                         </div>
@@ -251,7 +251,7 @@
                     <div class="list_search m-12" >
                         <div class="search_item  m-6">
                             <h4>Tiêu chí tìm kiếm</h4>
-                            <input id="text-search"  class="text-search c-11 search_item_input" type="text" placeholder="Tìm kiếm">
+                            <input id="text-search1"  class="text-search c-11 search_item_input" type="text" placeholder="Tìm kiếm">
                         </div>
                         <div class="search_item  m-6 chuyenmuc">
                             
@@ -261,16 +261,13 @@
                                 <option value="true">Hoa Hồng</option>
                                 <option value="true">Hoa thiết kế</option>
                                 <option value="true">Hoa ngày lễ</option>
-                                <!-- <option value="false">Giá (Cao > Thấp)</option> -->
-                                <!-- <option   ng-repeat=" x in maloaisp" value="{{x.maChuyenMuc}}">{{x.tenChuyenMuc}}</option> -->
-                                
                             </select>
                         </div>
                     </div>
                    
                     <div class="search_item c-6" style="display: flex ; justify-content: left; align-items: center;">
                         <div class="btn_search">
-                            <p >Tìm kiếm</p>
+                            <p  id="btn_search" >Tìm kiếm</p>
                         </div>
                     </div>
                 </div>
@@ -284,13 +281,12 @@
                             <i class="fa-solid fa-arrow-right-arrow-left"></i>
                             <p>So sánh sản phẩm</p>
                         </div>
-                        <div class="search_price">
-                            <p>Sắp xếp theo</p>
-                            <select    name="list_item_search" id="list_item_search"   >
+                        <div class="number-text">
+                            <label for="">Sắp xếp theo</label>
+                            <select id="input-sort" class="form-select" onchange="sapXepSanPham()" >
                                 <option value="choose">---Mặc định---</option>
-                                <option value="true">Giá (Thấp > Cao)</option>
-                                <option value="false">Giá (Cao > Thấp)</option>
-                                
+                                <option value="1">Giá (Thấp > Cao)</option>
+                                <option value="2">Giá (Cao > Thấp)</option>
                             </select>
                         </div>
                     </div>
